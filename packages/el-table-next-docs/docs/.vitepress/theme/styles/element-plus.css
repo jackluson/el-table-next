@@ -1,0 +1,49 @@
+*[class^="el-"] {
+  table {
+    margin: 0;
+    th {
+      border: none;
+    }
+    tr {
+      border-top: none;
+    }
+    td {
+      border: none;
+    }
+  }
+}
+
+html.dark {
+  --el-text-color-regular:  var(--vt-c-text-1);
+  --el-bg-color: var(--vt-c-bg);
+  --el-border-color-base: var(--vt-c-divider-light);
+
+  .el-button{
+    transition: background-color 0.5s, border-color 0.5s, color 0.5s;
+    --el-button-hover-text-color: var(--vt-c-text-2);
+    --el-button-bg-color: var(--vt-c-text-inverse-1);
+    --el-button-hover-bg-color: var(--vt-c-text-inverse-1);
+    --el-button-hover-border-color: var(--vt-c-text-inverse-1);
+  }
+
+  .el-table {
+    *{
+      transition: background-color 0.5s, border-color 0.5s, color 0.5s;
+    } 
+
+    --el-table-text-color: var(--vt-c-text-1);
+    --el-table-bg-color: var(--vt-c-bg);
+    --el-table-header-bg-color: var(--vt-c-bg-soft);
+    --el-table-tr-bg-color: var(--vt-c-bg);
+    --el-table-row-hover-bg-color: var(--vt-c-bg-soft);
+    --el-table-expanded-cell-bg-color: var(--vt-c-bg-soft)
+  }
+  *[class^="el-"] {
+    --el-table-bg-color: #1c1e21
+    /* .el-table {
+    } */
+    table {
+      margin: 0;
+    }
+  }
+}
