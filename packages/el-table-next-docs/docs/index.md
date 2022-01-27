@@ -1,68 +1,30 @@
 ---
-category: core
+page: true
+heroText: VueUse
+tagline: Collection of Essential<br>Vue Composition Utilities
+description: Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects.
+
+features:
+  - title: 🎛 Feature Rich
+    details: 140+ functions for you to choose from
+  - title: 🕶 Seamless migration
+    details: Works for both Vue 3 and 2
+  - title: ⚡ Fully tree shakeable
+    details: Only take what you want
+  - title: 🦾 Type Strong
+    details: Written in TypeScript, with full TS docs
+  - title: 🛠 Flexible
+    details: Passing refs as arguments, fully customizable, configurable event filters and targets
+  - title: ☁️ No bundler required
+    details: Usable via CDN, without any bundlers
+  - title: 🔋 SSR Friendly
+    details: Works perfectly with server-side rendering/generation
+  - title: 🎪 Interactive demos
+    details: Documentation of functions also come with interactive demos!
+  - title: 🔌 Add-ons
+    details: Support various add-ons like Router, Firebase, RxJS, etc.
+
+footer: MIT Licensed | Copyright © 2020-PRESENT Anthony Fu and @VueUse contributors
 ---
 
-# el-table-next
-
-<script>
-  console.log("in");
-</script>
-
-<script setup>
-import HelloWorld from './example/HelloWorld.vue'
-import ElTableProDemo from './example/ELTableProDemo.vue'
-import BasicTable from './example/basic-table.vue'
-// import ElTableProDemoTsx from '../../el-table-next-demo/src/components/ELTableProDemo'
-</script>
-
-<HelloWorld msg="哈哈士"/>
-<!-- 
-<ElTableProDemo/>
-<BasicTable/> -->
-<!-- <ElTableProDemoTsx/> -->
-
-<!-- <DemoContainer/> -->
-<!--
-<DemoBlock>
-  <template v-slot:demo>
-  jisdfijfi
-  </template>
-  <template v-slot:description>
-  jisdfij
-  </template>
-  <template v-slot:source>
-      ::: v-pre
-      ```js
-      module.exports = {
-        title: 'Hello VitePress',
-        description: 'Just playing around.',
-      };
-      ```
-      :::
-  </template>
-</DemoBlock> -->
-
-```js
-module.exports = {
-  title: 'Hello VitePress',
-  description: 'Just playing around.',
-};
-```
-
----
-
-## Usage
-
-```js
-import { ref } from 'vue';
-import { asyncComputed } from '@vueuse/core';
-
-const name = ref('jack');
-
-const userInfo = asyncComputed(
-  async () => {
-    return await mockLookUp(name.value);
-  },
-  null // initial state
-);
-```
+<Home />

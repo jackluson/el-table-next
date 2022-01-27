@@ -16,7 +16,10 @@
     "shiki": "^0.10.0"
   },
   "dependencies": {
+    "@iconify/json": "^2.0.29",
     "@vue/theme": "^1.0.0",
+    "unplugin-icons": "^0.13.0",
+    "unplugin-vue-components": "^0.17.15",
     "vite-plugin-windicss": "^1.5.4",
     "vitepress": "^0.21.6"
   }

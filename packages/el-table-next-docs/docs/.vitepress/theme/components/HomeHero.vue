@@ -1,24 +1,8 @@
 <template>
   <header v-if="showHero" class="home-hero pt-15 pb-10 px-5">
-    <p align="center">
-      <a href="https://github.com/vueuse/vueuse">
-        <img
-          class="!h-75 light:hidden"
-          src="/logo-vertical-dark.png"
-          alt="VueUse - Collection of essential Vue Composition Utilities"
-        >
-        <img
-          class="!h-75 dark:hidden"
-          src="/logo-vertical.png"
-          alt="VueUse - Collection of essential Vue Composition Utilities"
-        >
-      </a>
-      <br>
-    </p>
     <div class="description mx-auto -mt-8 mb-2">
       Collection of essential Vue Composition Utilities
     </div>
-
     <div class="mb-15 flex gap-1 place-content-center">
       <a href="https://www.npmjs.com/package/@vueuse/core" target="__blank"><img src="https://img.shields.io/npm/v/@vueuse/core?color=a1b858&label=" alt="NPM version"></a>
       <a href="https://www.npmjs.com/package/@vueuse/core" target="__blank"><img alt="NPM Downloads" src="https://img.shields.io/npm/dm/@vueuse/core?color=50a36f&label="></a>
@@ -26,15 +10,9 @@
     </div>
 
     <p class="actions flex gap-2 place-content-center">
-      <a class="get-started" href="/guide/">Get Started <carbon:arrow-right class="icon" /></a>
-      <a class="setup" href="/functions">All Functions</a>
-      <a class="setup" href="https://github.com/vueuse/vueuse" target="_blank"><carbon:logo-github class="icon" /> GitHub</a>
-    </p>
-
-    <p id="sponsor" class="mt-18 text-center">
-      <a href="https://github.com/sponsors/antfu">
-        <img src="https://cdn.jsdelivr.net/gh/antfu/static/sponsors.svg" class="m-auto">
+      <a class="get-started" href="/guide/">Get Started <icon-carbon:arrow-right class="icon" />
       </a>
+      <a class="setup" href="https://github.com/jackluson/el-table-next" target="_blank"><icon-carbon:logo-github class="icon" />GitHub</a>
     </p>
   </header>
 </template>

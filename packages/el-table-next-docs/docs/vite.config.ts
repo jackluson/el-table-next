@@ -1,5 +1,9 @@
+import { resolve } from 'path';
 import { defineConfig, Plugin } from 'vite';
 import { parse, SFCParseResult } from 'vue/compiler-sfc';
+import Components from 'unplugin-vue-components/vite';
+import Icons from 'unplugin-icons/vite';
+import IconsResolver from 'unplugin-icons/resolver';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import WindiCSS from 'vite-plugin-windicss';
@@ -19,16 +23,7 @@ const createDemoBlockSfc = (descriptor: SFCParseResult['descriptor']) => {
   const { template, scriptSetup, script, styles, customBlocks, source } =
     descriptor;
   const sliceStartIndex = source.indexOf('<desc>');
-  console.log(
-    '🚀 ~ file: vite.config.ts ~ line 22 ~ createDemoBlockSfc ~ startIndex',
-    sliceStartIndex
-  );
   const sliceEndIndex = source.indexOf('</desc>');
-  console.log(
-    '🚀 ~ file: vite.config.ts ~ line 22 ~ createDemoBlockSfc ~ startIndex',
-    sliceEndIndex
-  );
-
   let templateBlock = '';
   if (template) {
     const descBlocks = customBlocks.filter((item) => item.type === 'desc');
@@ -99,7 +94,7 @@ function MarkdownTransform(): Plugin {
     name: 'vueuse-md-transform',
     enforce: 'pre',
     async transform(code, id) {
-      if (!id.endsWith('.vue') || !/docs\/example/.test(id)) return null;
+      if (!id.endsWith('.vue') || !/docs.*\/example/.test(id)) return null;
       const parseSfcResult = parse(code, { sourceMap: false });
       const demoBlockSfc = createDemoBlockSfc(parseSfcResult.descriptor);
       return demoBlockSfc;
@@ -114,6 +109,21 @@ export default defineConfig({
       // options are passed on to @vue/babel-plugin-jsx
     }),
     MarkdownTransform(),
+    Components({
+      dirs: resolve(__dirname, '.vitepress/theme/components'),
+      include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+      resolvers: [
+        IconsResolver({
+          prefix: 'icon',
+          componentPrefix: '',
+        }),
+      ],
+      transformer: 'vue3',
+    }),
+    Icons({
+      compiler: 'vue3',
+      defaultStyle: 'display: inline-block',
+    }),
     WindiCSS({
       preflight: false,
     }),

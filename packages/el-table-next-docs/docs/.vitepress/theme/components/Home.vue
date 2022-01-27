@@ -10,13 +10,20 @@
 </template>
 
 <script setup lang="ts">
-import HomeHero from './HomeHero.vue'
-import HomeFeatures from './HomeFeatures.vue'
-import HomeFooter from './HomeFooter.vue'
+import HomeHero from "./HomeHero.vue";
+import HomeFeatures from "./HomeFeatures.vue";
+import HomeFooter from "./HomeFooter.vue";
 </script>
 
 <style scoped>
 .home {
   padding-top: var(--header-height);
+}
+</style>
+
+<style>
+.VPFooter {
+  display: none;
+  /* padding-top: var(--header-height); */
 }
 </style>

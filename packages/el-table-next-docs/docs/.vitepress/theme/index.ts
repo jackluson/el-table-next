@@ -1,8 +1,6 @@
 import { VPTheme } from '@vue/theme';
-// import { handleRedirects } from './redirects'
 import ElementPlus from 'element-plus';
 import DemoContainer from './components/DemoContainer.vue';
-import DemoBlock from './components/DemoBlock.vue';
 import ElTableNext from '../../../../el-table-next/index';
 // import ElTableNext from 'el-table-next';
 import 'virtual:windi-base.css';
@@ -23,9 +21,7 @@ const theme: any = {
     // app.use(ElTableNext)
     app.component('ElTableNext', ElTableNext);
     app.component('DemoContainer', DemoContainer);
-    app.component('DemoBlock', DemoBlock);
-    // if (typeof window !== 'undefined')
-    //   handleRedirects(ctx.router)
+    if (typeof window !== 'undefined') router.go(`/`);
   },
 };
 
