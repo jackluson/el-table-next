@@ -45,6 +45,7 @@ const config = {
       {
         text: 'Guide',
         link: '/guide/',
+        activeMatch: /guide/,
       },
     ],
     sidebar: {

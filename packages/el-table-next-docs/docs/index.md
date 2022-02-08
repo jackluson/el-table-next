@@ -7,12 +7,8 @@ description: Vue is designed from the ground up to be incrementally adoptable. T
 features:
   - title: 🎛 Feature Rich
     details: 140+ functions for you to choose from
-  - title: 🕶 Seamless migration
-    details: Works for both Vue 3 and 2
   - title: ⚡ Fully tree shakeable
     details: Only take what you want
-  - title: 🦾 Type Strong
-    details: Written in TypeScript, with full TS docs
   - title: 🛠 Flexible
     details: Passing refs as arguments, fully customizable, configurable event filters and targets
   - title: ☁️ No bundler required
@@ -21,8 +17,6 @@ features:
     details: Works perfectly with server-side rendering/generation
   - title: 🎪 Interactive demos
     details: Documentation of functions also come with interactive demos!
-  - title: 🔌 Add-ons
-    details: Support various add-ons like Router, Firebase, RxJS, etc.
 
 footer: MIT Licensed | Copyright © 2020-PRESENT Anthony Fu and @VueUse contributors
 ---

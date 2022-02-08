@@ -1,6 +1,6 @@
 <!--
  * @Date: 2022-01-25 17:41:54
- * @LastEditTime: 2022-01-26 18:22:22
+ * @LastEditTime: 2022-02-08 16:00:53
  * @Description: 
 -->
 <template>
@@ -105,7 +105,9 @@ export default {
       }, 1500);
     },
     scrollHandler() {
-      const { top, bottom, left } = this.$refs.meta.getBoundingClientRect();
+      const rect = this.$refs.meta && this.$refs.meta.getBoundingClientRect();
+      if (!rect) return
+      const { top, bottom, left } = rect
       this.fixedControl =
         bottom > document.documentElement.clientHeight &&
         top + 44 <= document.documentElement.clientHeight;

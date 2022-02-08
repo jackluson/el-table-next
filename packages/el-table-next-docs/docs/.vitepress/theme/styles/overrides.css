@@ -45,7 +45,17 @@ html.dark {
 
 .VPContentDoc .container {
   place-content: space-around !important;
+  .content {
+    max-width: 888px !important;
+    flex:1 !important;
+
+  }
+  .aside-container {
+    max-width: 224px;
+    width: max-content !important;
+  }
 }
+
 
 .meta .description {
   p {

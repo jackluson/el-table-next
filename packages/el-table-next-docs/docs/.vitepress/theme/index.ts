@@ -21,7 +21,9 @@ const theme: any = {
     // app.use(ElTableNext)
     app.component('ElTableNext', ElTableNext);
     app.component('DemoContainer', DemoContainer);
-    if (typeof window !== 'undefined') router.go(`/`);
+    if (typeof window !== 'undefined') {
+      router.go(`${location.pathname}`);
+    }
   },
 };
 
