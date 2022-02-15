@@ -1,6 +1,6 @@
 /*
  * @Date: 2021-12-08 11:14:12
- * @LastEditTime: 2022-01-05 20:35:38
+ * @LastEditTime: 2022-02-15 20:27:54
  * @Description: rollup config entry file
  */
 import vueJsx from '@vitejs/plugin-vue-jsx';
@@ -15,6 +15,7 @@ export default [
       {
         name: 'ElTableNext',
         format: 'umd',
+        exports: 'auto',
         file: `./dist/index.umd.js`,
         // extend: true,
         globals: {
@@ -24,10 +25,12 @@ export default [
       },
       {
         file: `./dist/index.mjs`,
+        exports: 'auto',
         format: 'es',
       },
       {
         file: `./dist/index.cjs`,
+        exports: 'auto',
         format: 'cjs',
       },
     ],
