@@ -64,7 +64,7 @@ export type MergeTableProps = TableValidProps &
   typeof tableProps &
   eventMethodProps & { otherProps: PropType<Record<string, any>> };
 
-export default defineComponent({
+const ElTableNext = defineComponent({
   name: 'ElTableNext',
   props: {
     ...(tableProps as MergeTableProps),
@@ -163,3 +163,5 @@ export default defineComponent({
     },
   },
 });
+export default ElTableNext;
+export { ElTableNext };

@@ -1,6 +1,6 @@
 /*
  * @Date: 2021-12-06 18:40:41
- * @LastEditTime: 2022-01-05 20:47:13
+ * @LastEditTime: 2022-02-15 18:18:26
  * @Description:
  */
 import ElTableNext from './index';
@@ -20,3 +20,5 @@ function install(app: ReturnType<typeof createApp>, options = {}) {
 (ElTableNext as ElTableProUse).install = install;
 
 export default ElTableNext as ElTableProUse;
+
+export { ElTableNext };

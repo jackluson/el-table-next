@@ -1,15 +1,15 @@
-# Example
+# 示例
 
-<script>
-  console.log("in");
-</script>
+## 基础表格
 
 <script setup>
+
 import HelloWorld from './example/HelloWorld.vue'
 import ElTableProDemo from './example/ELTableProDemo.vue'
-// import BasicTable from './example/basic-table.vue'
+import BasicTable from './example/basic-table.vue'
 // import ElTableProDemoTsx from '../../el-table-next-demo/src/components/ELTableProDemo'
 </script>
+<BasicTable/>
 <HelloWorld/>
 <!--
 <BasicTable/> -->

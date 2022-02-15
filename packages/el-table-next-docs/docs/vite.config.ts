@@ -110,13 +110,22 @@ export default defineConfig({
     }),
     MarkdownTransform(),
     Components({
-      dirs: resolve(__dirname, '.vitepress/theme/components'),
-      include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+      dirs: [
+        resolve(__dirname, '.vitepress/theme/components'),
+        resolve(__dirname, '../../../node_modules/el-table-next'),
+      ],
+      include: [/\.vue$/, /\.tsx$/, /\.vue\?vue/, /\.md$/],
       resolvers: [
         IconsResolver({
           prefix: 'icon',
           componentPrefix: '',
         }),
+        (name) => {
+          // where `name` is always CapitalCase
+          if (name === 'ElTableNext') {
+            return { importName: name, path: 'el-table-next' };
+          }
+        },
       ],
       transformer: 'vue3',
     }),
