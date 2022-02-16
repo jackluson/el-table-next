@@ -28,12 +28,16 @@
       ref="control"
       @click="isExpanded = !isExpanded"
     >
-      <div class="fold-block" :class="[{hovering: hovering}]">
-          <i :class="[iconClass, 'icon']"></i>
-          <div class="text" >{{ controlText }}</div>
+      <div class="fold-block" :class="[{ hovering: hovering }]">
+        <i :class="[iconClass, 'icon']"></i>
+        <div class="text">{{ controlText }}</div>
       </div>
       <transition name="bounce">
-        <span @click.stop="copyCode" :class="['copy-action', { 'copy-action-success ': copied }]">{{ copiedText }}</span>
+        <span
+          @click.stop="copyCode"
+          :class="['copy-action', { 'copy-action-success ': copied }]"
+          >{{ copiedText }}</span
+        >
       </transition>
     </div>
   </div>
@@ -42,7 +46,7 @@
 <script type="ts">
 import { useRoute } from 'vitepress'
 export default {
-  setup(){
+  setup() {
     const route = useRoute()
     return {
       route
@@ -68,7 +72,7 @@ export default {
   },
   computed: {
     langConfig() {
-        return {
+      return {
         "hide-text": "折叠代码",
         "show-text": "展开代码",
         "copy-text": "Copy",
@@ -90,16 +94,22 @@ export default {
     },
   },
   methods: {
-    copyCode() {
+    async copyCode() {
       if (this.copied) {
         return;
       }
       const pre = this.$el.querySelectorAll("pre")[0];
-      pre.setAttribute("contenteditable", "true");
-      pre.focus();
-      document.execCommand("selectAll", false, null);
-      this.copied = document.execCommand("copy");
-      pre.removeAttribute("contenteditable");
+      if (navigator.clipboard) {
+        await navigator.clipboard.writeText(pre.innerText);
+        this.copied = true
+      } else {
+        pre.setAttribute("contenteditable", "true");
+        pre.focus();
+        document.execCommand("selectAll", false, null);
+        this.copied = document.execCommand("copy");
+        pre.removeAttribute("contenteditable");
+      }
+
       setTimeout(() => {
         this.copied = false;
       }, 1500);
@@ -274,10 +284,9 @@ export default {
 }
 
 .demo-block .fold-block:hover i::before {
-  border-top-color:#409eff;
-  border-bottom-color:#409eff;
+  border-top-color: #409eff;
+  border-bottom-color: #409eff;
 }
-
 
 .demo-block .demo-block-control .copy-action-success {
   color: #1bc1a1;
