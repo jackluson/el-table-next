@@ -44,36 +44,25 @@
 </template>
 
 <script type="ts">
+import { ref } from 'vue'
 import { useRoute } from 'vitepress'
 export default {
   setup() {
     const route = useRoute()
     return {
-      route
-    }
-  },
-  data() {
-    return {
-      hovering: false,
-      copied: false,
-      isExpanded: false,
-      fixedControl: false,
-      codeContentWidth: 0,
-      scrollParent: null
-    };
-  },
-  props: {
-    options: {
-      type: Object,
-      default: () => {
-        return {};
-      }
+      route,
+      hovering: ref(false),
+      copied: ref(false),
+      isExpanded: ref(false),
+      fixedControl: ref(false),
+      codeContentWidth: ref(0),
+      scrollParent: ref(0)
     }
   },
   computed: {
     langConfig() {
       return {
-        "hide-text": "折叠代码",
+        "hide-text": "收起代码",
         "show-text": "展开代码",
         "copy-text": "Copy",
         "copy-success": "Copied！"
@@ -109,7 +98,6 @@ export default {
         this.copied = document.execCommand("copy");
         pre.removeAttribute("contenteditable");
       }
-
       setTimeout(() => {
         this.copied = false;
       }, 1500);
