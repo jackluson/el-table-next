@@ -1,6 +1,5 @@
 import { VPTheme } from '@vue/theme';
 import ElementPlus from 'element-plus';
-// import ElTableNext from 'el-table-next';
 import 'virtual:windi-base.css';
 import 'virtual:windi-components.css';
 import './styles/code.css';

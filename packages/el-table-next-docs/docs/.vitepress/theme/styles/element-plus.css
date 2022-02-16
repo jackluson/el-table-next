@@ -6,6 +6,7 @@
     }
     tr {
       border-top: none;
+      background-color: var(--el-table-tr-bg-color) !important;
     }
     td {
       border: none;
@@ -45,5 +46,6 @@ html.dark {
     table {
       margin: 0;
     }
+  
   }
 }

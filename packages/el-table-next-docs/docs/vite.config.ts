@@ -112,7 +112,7 @@ export default defineConfig({
     Components({
       dirs: [
         resolve(__dirname, '.vitepress/theme/components'),
-        resolve(__dirname, '../../../node_modules/el-table-next'),
+        resolve(__dirname, 'guide/example'),
       ],
       include: [/\.vue$/, /\.tsx$/, /\.vue\?vue/, /\.md$/],
       resolvers: [
