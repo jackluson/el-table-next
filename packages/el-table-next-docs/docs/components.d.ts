@@ -4,14 +4,24 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    BasicRenderTable: typeof import('./guide/example/BasicRenderTable.vue')['default']
+    BasicSlotTable: typeof import('./guide/example/BasicSlotTable.vue')['default']
+    BasicTable: typeof import('./guide/example/BasicTable.vue')['default']
     BooleanDisplay: typeof import('./.vitepress/theme/components/BooleanDisplay.vue')['default']
+    BorderTable: typeof import('./guide/example/BorderTable.vue')['default']
+    ButtonNumber: typeof import('./.vitepress/theme/components/ButtonNumber.vue')['default']
     DemoBlock: typeof import('./.vitepress/theme/components/DemoBlock.vue')['default']
     DemoContainer: typeof import('./.vitepress/theme/components/DemoContainer.vue')['default']
     ElTableNext: typeof import('el-table-next')['ElTableNext']
+    ELTableProDemo: typeof import('./guide/example/ELTableProDemo.vue')['default']
+    FixedHeaderTable: typeof import('./guide/example/FixedHeaderTable.vue')['default']
+    HelloWorld: typeof import('./guide/example/HelloWorld.vue')['default']
     Home: typeof import('./.vitepress/theme/components/Home.vue')['default']
     HomeFeatures: typeof import('./.vitepress/theme/components/HomeFeatures.vue')['default']
     HomeFooter: typeof import('./.vitepress/theme/components/HomeFooter.vue')['default']
     HomeHero: typeof import('./.vitepress/theme/components/HomeHero.vue')['default']
+    StatusTable: typeof import('./guide/example/StatusTable.vue')['default']
+    StripeTable: typeof import('./guide/example/StripeTable.vue')['default']
   }
 }
 

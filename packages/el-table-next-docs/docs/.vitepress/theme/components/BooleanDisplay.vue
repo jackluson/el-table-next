@@ -1,23 +1,23 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref } from "vue";
 
 const props = defineProps({
   value: {
     default: false,
   },
   true: {
-    default: 'true',
+    default: "true",
   },
   false: {
-    default: 'false',
+    default: "false",
   },
   trueClass: {
-    default: 'text-primary',
+    default: "text-primary",
   },
   falseClass: {
-    default: 'text-orange-400 dark:text-orange-300',
+    default: "text-orange-400 dark:text-orange-300",
   },
-})
+});
 </script>
 
 <template>
