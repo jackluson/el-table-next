@@ -1,6 +1,7 @@
 *[class^="el-"] {
   table {
     margin: 0;
+    display: table;
     th {
       border: none;
     }

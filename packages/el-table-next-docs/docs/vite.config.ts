@@ -87,11 +87,11 @@ const createDemoBlockSfc = (descriptor: SFCParseResult['descriptor']) => {
   return scriptSetupBlock + scriptBlock + templateBlock + styleBlock;
 };
 
-function MarkdownTransform(): Plugin {
+function DemoBlockTransform(): Plugin {
   // const DIR_TYPES = resolve(__dirname, '../types/packages')
   // const DIR_SRC = resolve(__dirname, '../packages')
   return {
-    name: 'vueuse-md-transform',
+    name: 'demo-block-md-transform',
     enforce: 'pre',
     async transform(code, id) {
       if (!id.endsWith('.vue') || !/docs.*\/example/.test(id)) return null;
@@ -108,7 +108,7 @@ export default defineConfig({
     vueJsx({
       // options are passed on to @vue/babel-plugin-jsx
     }),
-    MarkdownTransform(),
+    DemoBlockTransform(),
     Components({
       dirs: [
         resolve(__dirname, '.vitepress/theme/components'),

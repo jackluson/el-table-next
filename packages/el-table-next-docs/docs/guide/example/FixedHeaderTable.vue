@@ -1,5 +1,5 @@
 <template>
-  <el-table-next border :column="column" :data="tableData" :maxHeight="250" />
+  <el-table-next border :column="column" :data="tableData" :height="250" />
 </template>
 
 <script lang="ts" setup>

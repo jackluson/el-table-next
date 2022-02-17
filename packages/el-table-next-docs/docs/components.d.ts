@@ -14,6 +14,8 @@ declare module 'vue' {
     DemoContainer: typeof import('./.vitepress/theme/components/DemoContainer.vue')['default']
     ElTableNext: typeof import('el-table-next')['ElTableNext']
     ELTableProDemo: typeof import('./guide/example/ELTableProDemo.vue')['default']
+    FixedColumnTable: typeof import('./guide/example/FixedColumnTable.vue')['default']
+    FixedHeaderColumnTable: typeof import('./guide/example/FixedHeaderColumnTable.vue')['default']
     FixedHeaderTable: typeof import('./guide/example/FixedHeaderTable.vue')['default']
     HelloWorld: typeof import('./guide/example/HelloWorld.vue')['default']
     Home: typeof import('./.vitepress/theme/components/Home.vue')['default']

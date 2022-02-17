@@ -13,7 +13,7 @@
 `render方式`即是提供一个 render 渲染函数，给 render 函数传入 scope 参数(包含这一行数据、配置信息等信息），根据自己需求来渲染，如果 render 返回值是 html 类型，`script`的`lang`属性应该是`tsx`或者`jsx`
 <BasicRenderTable/>
 
-## Slot 方式
+## Slot 方式使用
 
 `slot方式`即是在`el-table-next`中提供插槽，然后在`column`配置中指定运用插槽的名字，可以同时运用多个不同插槽
 <BasicSlotTable/>
@@ -43,6 +43,32 @@
 
 只要在 `el-table-next` 元素中定义了 height 属性，即可实现固定表头的表格，而不需要额外的代码。
 <FixedHeaderTable/>
+
+## 固定列
+
+横向内容过多时，可选择固定列。
+
+固定列需要使用 `fixed` 属性，它接受 Boolean 值 如果为 `true`, 列将被左侧固定. 它还接受传入字符串，left 或 right，表示左边固定还是右边固定。
+<FixedColumnTable/>
+
+## 固定列和表头
+
+横纵内容过多时，可选择固定列和表头。
+
+固定列和表头可以同时使用，只需要将上述两个属性分别设置好即可。
+<FixedHeaderColumnTable/>
+
+## 流体高度
+
+当数据量动态变化时，可以为 Table 设置一个最大高度。
+
+通过设置 `max-height` 属性为 Table 指定最大高度。 此时若表格所需的高度大于最大高度，则会显示一个滚动条
+
+## 多级表头
+
+数据结构比较复杂的时候，可使用多级表头来展现数据的层次关系。
+
+只需要在 `column`的某一项配置 children 数组属性，然后再配置`column`就可以实现多级表头。
 
 ```js
 module.exports = {
