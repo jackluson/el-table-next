@@ -1,6 +1,6 @@
 <template>
   <el-table-next :column="column" :data="tableData">
-    <template v-slot:name="{ row }">
+    <template #name="{ row }">
       <div>
         <ButtonNumber />
         <span>
@@ -9,7 +9,7 @@
         </span>
       </div>
     </template>
-    <template v-slot>
+    <template #default>
       <div>
         <span>
           默认插槽名字为

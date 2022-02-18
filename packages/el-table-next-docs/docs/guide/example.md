@@ -64,11 +64,14 @@
 
 通过设置 `max-height` 属性为 Table 指定最大高度。 此时若表格所需的高度大于最大高度，则会显示一个滚动条
 
+<FixedHeaderWithFluidTable/>
+
 ## 多级表头
 
 数据结构比较复杂的时候，可使用多级表头来展现数据的层次关系。
 
 只需要在 `column`的某一项配置 children 数组属性，然后再配置`column`就可以实现多级表头。
+<GroupHeaderTable/>
 
 ```js
 module.exports = {
