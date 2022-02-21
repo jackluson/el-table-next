@@ -2,7 +2,9 @@
   <el-table-next :column="column" :data="tableData" />
 </template>
 <script setup lang="ts">
-const column = [
+import type { ElTableColumnProps } from "el-table-next";
+/* 引入ElTableColumnProps定义column可获得类型提示 */
+const column: ElTableColumnProps[] = [
   {
     type: "index",
     width: "60px",

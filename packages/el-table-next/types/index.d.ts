@@ -1,7 +1,15 @@
-import { PropType } from 'vue';
-import type ElTable from 'element-plus/lib/components/table';
+import { PropType } from "vue";
+import type ElTable from "element-plus/lib/components/table";
+import type { ElTableColumn } from "element-plus/lib/components/table";
 declare type ElTableType = InstanceType<typeof ElTable>;
-declare type ElTableProps = ElTableType['$props'];
+declare type ElTableProps = ElTableType["$props"];
+declare type UserElTableColumnProps = {
+    slotName?: string;
+    headerSlot?: string;
+    render?: (...arg: any[]) => any;
+    children?: ElTableColumnProps[];
+};
+export declare type ElTableColumnProps = InstanceType<typeof ElTableColumn>["$props"] & UserElTableColumnProps;
 export declare type ConditionalKeys<Base, Condition> = NonNullable<{
     [Key in keyof Base]: Key extends Condition ? Key : never;
 }[keyof Base]>;
@@ -28,11 +36,11 @@ export declare const tableProps: {
         default: string;
     };
     column: {
-        type: PropType<Record<string, any>[]>;
+        type: PropType<ElTableColumnProps[]>;
         default: () => any[];
     };
 };
-declare type OmitTableProp = Required<Omit<ElTableProps, 'data' | 'class' | eventKey>>;
+declare type OmitTableProp = Required<Omit<ElTableProps, "data" | "class" | eventKey>>;
 declare type KeyConstructor<Base extends object> = {
     [KeyProp in keyof Base]: PropType<Base[KeyProp]>;
 };
@@ -40,12 +48,13 @@ declare type TableValidProps = KeyConstructor<OmitTableProp>;
 export declare type MergeTableProps = TableValidProps & typeof tableProps & eventMethodProps & {
     otherProps: PropType<Record<string, any>>;
 };
-declare const _default: import("vue").DefineComponent<{
+declare const ElTableNext: import("vue").DefineComponent<{
     key: PropType<string | number | symbol>;
     height: PropType<string | number>;
     width: PropType<string | number>;
     border: PropType<boolean>;
     maxHeight: PropType<string | number>;
+    tableLayout: PropType<"fixed" | "auto">;
     style: PropType<import("vue").CSSProperties>;
     load: PropType<(row: any, treeNode: import("element-plus/lib/components/table/src/table/defaults").TreeNode, resolve: (data: any[]) => void) => void>;
     className: PropType<string>;
@@ -53,13 +62,13 @@ declare const _default: import("vue").DefineComponent<{
     lazy: PropType<boolean>;
     defaultSort: PropType<import("element-plus/lib/components/table/src/table/defaults").Sort>;
     fit: PropType<boolean>;
+    ref: PropType<string | import("vue").Ref<any> | ((ref: object, refs: Record<string, any>) => void)>;
     cellClassName: PropType<string | ((data: {
         row: any;
         rowIndex: number;
         column: import("element-plus/lib/components/table/src/table-column/defaults").TableColumnCtx<any>;
         columnIndex: number;
     }) => string)>;
-    ref: PropType<string | import("vue").Ref<any> | ((ref: object, refs: Record<string, any>) => void)>;
     stripe: PropType<boolean>;
     rowKey: PropType<string | ((row: any) => string)>;
     showHeader: PropType<boolean>;
@@ -67,27 +76,17 @@ declare const _default: import("vue").DefineComponent<{
     sumText: PropType<string>;
     summaryMethod: PropType<import("element-plus/lib/components/table/src/table/defaults").SummaryMethod<any>>;
     rowClassName: PropType<import("element-plus/lib/components/table/src/table/defaults").ColumnCls<any>>;
-    rowStyle: PropType<import("element-plus/lib/components/table/src/table/defaults").ColumnStyle<any>>;
-    cellStyle: PropType<import("vue").CSSProperties | ((data: {
-        row: any;
-        rowIndex: number;
-        column: import("element-plus/lib/components/table/src/table-column/defaults").TableColumnCtx<any>;
-        columnIndex: number;
-    }) => import("vue").CSSProperties)>;
+    rowStyle: PropType<unknown>;
+    cellStyle: PropType<unknown>;
     headerRowClassName: PropType<import("element-plus/lib/components/table/src/table/defaults").ColumnCls<any>>;
-    headerRowStyle: PropType<import("element-plus/lib/components/table/src/table/defaults").ColumnStyle<any>>;
+    headerRowStyle: PropType<unknown>;
     headerCellClassName: PropType<string | ((data: {
         row: any;
         rowIndex: number;
         column: import("element-plus/lib/components/table/src/table-column/defaults").TableColumnCtx<any>;
         columnIndex: number;
     }) => string)>;
-    headerCellStyle: PropType<import("vue").CSSProperties | ((data: {
-        row: any;
-        rowIndex: number;
-        column: import("element-plus/lib/components/table/src/table-column/defaults").TableColumnCtx<any>;
-        columnIndex: number;
-    }) => import("vue").CSSProperties)>;
+    headerCellStyle: PropType<unknown>;
     highlightCurrentRow: PropType<boolean>;
     currentRowKey: PropType<string | number>;
     emptyText: PropType<string>;
@@ -158,7 +157,7 @@ declare const _default: import("vue").DefineComponent<{
         default: string;
     };
     column: {
-        type: PropType<Record<string, any>[]>;
+        type: PropType<ElTableColumnProps[]>;
         default: () => any[];
     };
     onSelect: (...args: any[]) => any;
@@ -188,6 +187,7 @@ declare const _default: import("vue").DefineComponent<{
     width?: unknown;
     border?: unknown;
     maxHeight?: unknown;
+    tableLayout?: unknown;
     style?: unknown;
     load?: unknown;
     className?: unknown;
@@ -195,8 +195,8 @@ declare const _default: import("vue").DefineComponent<{
     lazy?: unknown;
     defaultSort?: unknown;
     fit?: unknown;
-    cellClassName?: unknown;
     ref?: unknown;
+    cellClassName?: unknown;
     stripe?: unknown;
     rowKey?: unknown;
     showHeader?: unknown;
@@ -252,7 +252,7 @@ declare const _default: import("vue").DefineComponent<{
     otherProps?: unknown;
 } & {
     data: Record<string, any>[];
-    column: Record<string, any>[];
+    column: ElTableColumnProps[];
     align: string;
 } & {
     key?: string | number | symbol;
@@ -260,6 +260,7 @@ declare const _default: import("vue").DefineComponent<{
     width?: string | number;
     border?: boolean;
     maxHeight?: string | number;
+    tableLayout?: "fixed" | "auto";
     style?: unknown;
     load?: (row: any, treeNode: import("element-plus/lib/components/table/src/table/defaults").TreeNode, resolve: (data: any[]) => void) => void;
     className?: string;
@@ -268,13 +269,13 @@ declare const _default: import("vue").DefineComponent<{
     onSelect?: any;
     defaultSort?: import("element-plus/lib/components/table/src/table/defaults").Sort;
     fit?: boolean;
+    ref?: string | import("vue").Ref<any> | ((ref: object, refs: Record<string, any>) => void);
     cellClassName?: string | ((data: {
         row: any;
         rowIndex: number;
         column: import("element-plus/lib/components/table/src/table-column/defaults").TableColumnCtx<any>;
         columnIndex: number;
     }) => string);
-    ref?: string | import("vue").Ref<any> | ((ref: object, refs: Record<string, any>) => void);
     stripe?: boolean;
     rowKey?: string | ((row: any) => string);
     showHeader?: boolean;
@@ -371,7 +372,8 @@ declare const _default: import("vue").DefineComponent<{
     otherProps?: unknown;
 }>, {
     data: Record<string, any>[];
-    column: Record<string, any>[];
+    column: ElTableColumnProps[];
     align: string;
 }>;
-export default _default;
+export default ElTableNext;
+export { ElTableNext };

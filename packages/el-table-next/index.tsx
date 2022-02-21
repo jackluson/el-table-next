@@ -1,8 +1,18 @@
-import { defineComponent, PropType, ref } from 'vue';
-import type ElTable from 'element-plus/lib/components/table';
+import { defineComponent, PropType } from "vue";
+import type ElTable from "element-plus/lib/components/table";
+import type { ElTableColumn } from "element-plus/lib/components/table";
 
 type ElTableType = InstanceType<typeof ElTable>;
-type ElTableProps = ElTableType['$props'];
+type ElTableProps = ElTableType["$props"];
+
+type UserElTableColumnProps = {
+  slotName?: string;
+  headerSlot?: string;
+  render?: (...arg: any[]) => any;
+  children?: ElTableColumnProps[];
+};
+export type ElTableColumnProps = InstanceType<typeof ElTableColumn>["$props"] &
+  UserElTableColumnProps;
 
 export type ConditionalKeys<Base, Condition> = NonNullable<
   // Wrap in `NonNullable` to strip away the `undefined` type from the produced union.
@@ -46,14 +56,14 @@ export const tableProps = {
   },
   align: {
     type: String,
-    default: 'center',
+    default: "center",
   },
   column: {
-    type: Array as PropType<Record<string, any>[]>,
+    type: Array as PropType<ElTableColumnProps[]>,
     default: () => [],
   },
 };
-type OmitTableProp = Required<Omit<ElTableProps, 'data' | 'class' | eventKey>>;
+type OmitTableProp = Required<Omit<ElTableProps, "data" | "class" | eventKey>>;
 
 type KeyConstructor<Base extends object> = {
   [KeyProp in keyof Base]: PropType<Base[KeyProp]>;
@@ -65,7 +75,7 @@ export type MergeTableProps = TableValidProps &
   eventMethodProps & { otherProps: PropType<Record<string, any>> };
 
 const ElTableNext = defineComponent({
-  name: 'ElTableNext',
+  name: "ElTableNext",
   props: {
     ...(tableProps as MergeTableProps),
   },
@@ -81,7 +91,7 @@ const ElTableNext = defineComponent({
           default?: (scope: Record<string, any>) => any;
           header?: (scope: Record<string, any>) => any;
         } = {};
-        if (typeof render === 'function') {
+        if (typeof render === "function") {
           vSlots.default = (scope) => {
             if (restAtts.prop) {
               return render(scope.row[restAtts.prop], scope);
@@ -90,7 +100,7 @@ const ElTableNext = defineComponent({
           };
         }
 
-        if (slotName && typeof slots[slotName] === 'function') {
+        if (slotName && typeof slots[slotName] === "function") {
           vSlots.default = (scope) =>
             (slots[slotName] as (scope: any) => {})(scope);
         }
@@ -119,7 +129,7 @@ const ElTableNext = defineComponent({
         <div>
           <el-table
             data={data}
-            ref='yoTableRef'
+            ref="yoTableRef"
             {...attrs}
             v-slots={{
               append: () => {
@@ -141,17 +151,17 @@ const ElTableNext = defineComponent({
     // https://element-plus.org/zh-CN/component/table.html#table-方法
     injectTablePrimaryMethods() {
       const _self = this as any;
-      const yoTableRef = _self['yoTableRef'];
+      const yoTableRef = _self["yoTableRef"];
       const tableMethodNameList = [
-        'clearSelection',
-        'toggleRowSelection',
-        'toggleAllSelection',
-        'toggleRowExpansion',
-        'setCurrentRow',
-        'clearSort',
-        'clearFilter',
-        'doLayout',
-        'sort',
+        "clearSelection",
+        "toggleRowSelection",
+        "toggleAllSelection",
+        "toggleRowExpansion",
+        "setCurrentRow",
+        "clearSort",
+        "clearFilter",
+        "doLayout",
+        "sort",
       ];
       for (const methodName of tableMethodNameList) {
         if (_self[methodName]) {

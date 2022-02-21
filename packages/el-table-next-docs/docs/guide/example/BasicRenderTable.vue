@@ -20,7 +20,11 @@ const column = [
     render: (data, scope) => {
       const { row, column } = scope;
       const propKey = column.property;
-      return <div>render 结果 -- {row[propKey]}== {data}</div>;
+      return (
+        <div>
+          render 结果 -- {row[propKey]}== {data}
+        </div>
+      );
     },
   },
   {

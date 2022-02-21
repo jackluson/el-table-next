@@ -5,3 +5,4 @@ declare type ElTableProUse = typeof ElTableNext & {
 };
 declare const _default: ElTableProUse;
 export default _default;
+export { ElTableNext };
