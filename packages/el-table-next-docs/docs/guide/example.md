@@ -73,22 +73,43 @@
 只需要在 `column`的某一项配置 children 数组属性，然后再配置`column`就可以实现多级表头。
 <GroupHeaderTable/>
 
-```js
-module.exports = {
-  title: 'Hello VitePress',
-  description: 'Just playing around.',
-};
-```
+## 单选
+
+选择单行数据时使用色块表示。
+
+Table 组件提供了单选的支持， 只需要配置 `highlight-current-row` 属性即可实现单选。 之后由 `current-change` 事件来管理选中时触发的事件，它会传入 `currentRow`，`oldCurrentRow`。 如果需要显示索引，可以增加一列 `el-table-column`，设置 `type` 属性为 `index` 即可显示从 1 开始的索引号。
+<SingleSelectTable/>
+
+## 多选
+
+你也可以选择多行。
+
+实现多选非常简单: 手动添加一个 `el-table-column`，设 type 属性为 selection 即可； 除了多个选项，此示例还使用 `show-overflow-tooltip`：默认， 如果内容过长，它会分成多行。 若需要单行显示可以使用 `show-overflow-tooltip` 属性，它接受一个 `Boolean，` 为 `true` 时多余的内容会在 `hover` 时以 `tooltip` 的形式显示出来。
+<MultiSelectTable/>
+
+## 排序
+
+对表格进行排序，可快速查找或对比数据。
+
+在列中设置 `sortable` 属性即可实现以该列为基准的排序， 接受一个 `Boolean`，默认为 `false`。 可以通过 `Table` 的 `default-sort` 属性设置默认的排序列和排序顺序。 可以使用 `sort-method` 或者 `sort-by` 使用自定义的排序规则。 如果需要后端排序，需将 `sortable` 设置为 `custom`，同时在 `Table` 上监听 sort-change 事件， 在事件回调中可以获取当前排序的字段名和排序顺序，从而向接口请求排序后的表格数据。 在本例中，我们还使用了 `formatter` 属性，它用于格式化指定列的值， 接受一个 `Function`，会传入两个参数：`row` 和 `column`， 可以根据自己的需求进行处理。
+<SortTable/>
+
+## 筛选
+
+对表格进行筛选，可快速查找到自己想看的数据。
+
+在列中设置 `filters` 和 `filter-method` 属性即可开启该列的筛选， `filters` 是一个数组，`filter-method` 是一个方法，它用于决定某些数据是否显示， 会传入三个参数：`value`, `row` 和 `column`。
+<FilterTable/>
 
 ---
 
 ## Usage
 
 ```js
-import { ref } from 'vue';
-import { asyncComputed } from '@vueuse/core';
+import { ref } from "vue";
+import { asyncComputed } from "@vueuse/core";
 
-const name = ref('jack');
+const name = ref("jack");
 
 const userInfo = asyncComputed(
   async () => {
