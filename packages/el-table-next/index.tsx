@@ -151,7 +151,7 @@ const ElTableNext = defineComponent({
     // https://element-plus.org/zh-CN/component/table.html#table-方法
     injectTablePrimaryMethods() {
       const _self = this as any;
-      const yoTableRef = _self["yoTableRef"];
+      const yoTableRef = _self["$refs"]["yoTableRef"];
       const tableMethodNameList = [
         "clearSelection",
         "toggleRowSelection",
