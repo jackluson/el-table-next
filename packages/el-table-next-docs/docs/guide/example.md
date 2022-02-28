@@ -101,15 +101,67 @@ Table 组件提供了单选的支持， 只需要配置 `highlight-current-row` 
 在列中设置 `filters` 和 `filter-method` 属性即可开启该列的筛选， `filters` 是一个数组，`filter-method` 是一个方法，它用于决定某些数据是否显示， 会传入三个参数：`value`, `row` 和 `column`。
 <FilterTable/>
 
+## 自定义列模板
+
+自定义列的显示内容，可组合其他组件使用。
+
+通过 `slot` 可以获取到 row, column, $index 和 store（table 内部的状态管理）的数据，用法参考 demo。
+<CustomColumnTable/>
+
+## 自定义表头
+
+表头支持自定义。
+
+通过设置 [slot](https://v3.vuejs.org/guide/component-slots.html) 来自定义表头。
+<CustomHeaderTable/>
+
+## 展开行
+
+当行内容过多并且不想显示横向滚动条时，可以使用 Table 展开行功能。
+
+通过设置 type="expand" 和 slot 可以开启展开行功能， el-table-column 的模板会被渲染成为展开行的内容，展开行可访问的属性与使用自定义列模板时的 slot 相同。
+<ExpandableRowTable/>
+
+## 树形数据与懒加载
+
+支持树类型的数据的显示。 当 row 中包含 `children` 字段时，被视为树形数据。 渲染树形数据时，必须要指定 `row-key`。支持子节点数据异步加载。 设置 Table 的 `lazy` 属性为 true 与加载函数 `load` 。 通过指定 row 中的 `hasChildren` 字段来指定哪些行是包含子节点。 `children` 与 `hasChildren` 都可以通过 `tree-props` 配置。
+<TreeAndLazyTable/>
+
+## 表尾合计行
+
+若表格展示的是各类数字，可以在表尾显示各列的合计。
+
+将 `show-summary` 设置为`true`就会在表格尾部展示合计行。 默认情况下，对于合计行，第一列不进行数据求合操作，而是显示「合计」二字（可通过`sum-text`配置），其余列会将本列所有数值进行求合操作，并显示出来。 当然，你也可以定义自己的合计逻辑。 使用 `summary-method` 并传入一个方法，返回一个数组，这个数组中的各项就会显示在合计行的各列中， 具体可以参考本例中的第二个表格。
+<SummaryTable/>
+
+## 合并行或列
+
+多行或多列共用一个数据时，可以合并行或列。
+
+通过给 table 传入`span-method`方法可以实现合并行或列， 方法的参数是一个对象，里面包含当前行 `row`、当前列 `column`、当前行号 `rowIndex`、当前列号 `columnIndex` 四个属性。 该函数可以返回一个包含两个元素的数组，第一个元素代表 `rowspan`，第二个元素代表 `colspan`。 也可以返回一个键名为 `rowspan` 和 `colspan` 的对象。
+<RowColumnSpanTable/>
+
+## 自定义索引
+
+自定义 `type=index` 列的行号。
+
+通过给 `type=index` 的列传入 index 属性，可以自定义索引。 该属性传入数字时，将作为索引的起始值。 也可以传入一个方法，它提供当前行的行号（从 0 开始）作为参数，返回值将作为索引展示。
+<CustomIndexTable/>
+
+## Table Layout
+
+The [table-layout](https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout) property sets the algorithm used to lay out table cells, rows, and columns.
+<LayoutTable/>
+
 ---
 
 ## Usage
 
 ```js
-import { ref } from "vue";
-import { asyncComputed } from "@vueuse/core";
+import { ref } from 'vue';
+import { asyncComputed } from '@vueuse/core';
 
-const name = ref("jack");
+const name = ref('jack');
 
 const userInfo = asyncComputed(
   async () => {
