@@ -3,11 +3,11 @@
     <el-radio-button label="fixed"></el-radio-button>
     <el-radio-button label="auto"></el-radio-button>
   </el-radio-group>
-  <el-table-next :column="column" :data="tableData" :table-layout="tableLayout">
-    <el-table-column prop="date" label="Date" />
-    <el-table-column prop="name" label="Name" />
-    <el-table-column prop="address" label="Address" />
-  </el-table-next>
+  <el-table-next
+    :column="column"
+    :data="tableData"
+    :table-layout="tableLayout"
+  ></el-table-next>
 </template>
 
 <script lang="ts" setup>
@@ -19,12 +19,10 @@ const column = [
   {
     prop: "date",
     label: "Date",
-    width: 180,
   },
   {
     prop: "name",
     label: "Name",
-    width: 180,
   },
   {
     prop: "address",
