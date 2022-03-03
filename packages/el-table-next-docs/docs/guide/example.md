@@ -152,21 +152,3 @@ Table 组件提供了单选的支持， 只需要配置 `highlight-current-row` 
 
 The [table-layout](https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout) property sets the algorithm used to lay out table cells, rows, and columns.
 <LayoutTable/>
-
----
-
-## Usage
-
-```js
-import { ref } from 'vue';
-import { asyncComputed } from '@vueuse/core';
-
-const name = ref('jack');
-
-const userInfo = asyncComputed(
-  async () => {
-    return await mockLookUp(name.value);
-  },
-  null // initial state
-);
-```
