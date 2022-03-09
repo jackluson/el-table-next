@@ -1,9 +1,10 @@
-import { defineComponent, PropType } from "vue";
-import type ElTable from "element-plus/lib/components/table";
-import type { ElTableColumn } from "element-plus/lib/components/table";
+import { defineComponent, PropType } from 'vue';
+import type ElTable from 'element-plus/lib/components/table';
+import type { ElTableColumn } from 'element-plus/lib/components/table';
+import type { SummaryMethod } from 'element-plus/lib/components/table/src/table/defaults';
 
 type ElTableType = InstanceType<typeof ElTable>;
-type ElTableProps = ElTableType["$props"];
+type ElTableProps = ElTableType['$props'];
 
 type UserElTableColumnProps = {
   slotName?: string;
@@ -11,7 +12,7 @@ type UserElTableColumnProps = {
   render?: (...arg: any[]) => any;
   children?: ElTableColumnProps[];
 };
-export type ElTableColumnProps = InstanceType<typeof ElTableColumn>["$props"] &
+export type ElTableColumnProps = InstanceType<typeof ElTableColumn>['$props'] &
   UserElTableColumnProps;
 
 export type ConditionalKeys<Base, Condition> = NonNullable<
@@ -56,14 +57,14 @@ export const tableProps = {
   },
   align: {
     type: String,
-    default: "center",
+    default: 'center',
   },
   column: {
     type: Array as PropType<ElTableColumnProps[]>,
     default: () => [],
   },
 };
-type OmitTableProp = Required<Omit<ElTableProps, "data" | "class" | eventKey>>;
+type OmitTableProp = Required<Omit<ElTableProps, 'data' | 'class' | eventKey>>;
 
 type KeyConstructor<Base extends object> = {
   [KeyProp in keyof Base]: PropType<Base[KeyProp]>;
@@ -72,15 +73,18 @@ type TableValidProps = KeyConstructor<OmitTableProp>;
 
 export type MergeTableProps = TableValidProps &
   typeof tableProps &
-  eventMethodProps & { otherProps: PropType<Record<string, any>> };
+  eventMethodProps & {
+    otherProps: PropType<Record<string, any>>;
+    summaryMethod: PropType<(...param: any[]) => string[]>;
+  };
 
 const ElTableNext = defineComponent({
-  name: "ElTableNext",
+  name: 'ElTableNext',
   props: {
     ...(tableProps as MergeTableProps),
   },
   setup(props, { attrs, slots }) {
-    // const yoTableRef = ref<ElTableType>();
+    // const elTableRef = ref<ElTableType>();
     return () => {
       const { data, column, align } = props;
 
@@ -91,7 +95,7 @@ const ElTableNext = defineComponent({
           default?: (scope: Record<string, any>) => any;
           header?: (scope: Record<string, any>) => any;
         } = {};
-        if (typeof render === "function") {
+        if (typeof render === 'function') {
           vSlots.default = (scope) => {
             if (restAtts.prop) {
               return render(scope.row[restAtts.prop], scope);
@@ -100,7 +104,7 @@ const ElTableNext = defineComponent({
           };
         }
 
-        if (slotName && typeof slots[slotName] === "function") {
+        if (slotName && typeof slots[slotName] === 'function') {
           vSlots.default = (scope) =>
             (slots[slotName] as (scope: any) => {})(scope);
         }
@@ -129,11 +133,14 @@ const ElTableNext = defineComponent({
         <div>
           <el-table
             data={data}
-            ref="yoTableRef"
+            ref='elTableRef'
             {...attrs}
             v-slots={{
               append: () => {
                 return slots.append && slots.append();
+              },
+              empty: () => {
+                return slots.empty && slots.empty();
               },
             }}
           >
@@ -151,23 +158,23 @@ const ElTableNext = defineComponent({
     // https://element-plus.org/zh-CN/component/table.html#table-方法
     injectTablePrimaryMethods() {
       const _self = this as any;
-      const yoTableRef = _self["$refs"]["yoTableRef"];
+      const elTableRef = _self['$refs']['elTableRef'];
       const tableMethodNameList = [
-        "clearSelection",
-        "toggleRowSelection",
-        "toggleAllSelection",
-        "toggleRowExpansion",
-        "setCurrentRow",
-        "clearSort",
-        "clearFilter",
-        "doLayout",
-        "sort",
+        'clearSelection',
+        'toggleRowSelection',
+        'toggleAllSelection',
+        'toggleRowExpansion',
+        'setCurrentRow',
+        'clearSort',
+        'clearFilter',
+        'doLayout',
+        'sort',
       ];
       for (const methodName of tableMethodNameList) {
         if (_self[methodName]) {
           console.warn(`the ${methodName} method is exist!, please rename it `);
         } else {
-          _self[methodName] = yoTableRef?.[methodName as keyof ElTableType];
+          _self[methodName] = elTableRef?.[methodName as keyof ElTableType];
         }
       }
     },
