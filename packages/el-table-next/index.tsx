@@ -1,4 +1,4 @@
-import { defineComponent, PropType } from 'vue';
+import { defineComponent, PropType, Ref } from 'vue';
 import type ElTable from 'element-plus/lib/components/table';
 import type { ElTableColumn } from 'element-plus/lib/components/table';
 import type { SummaryMethod } from 'element-plus/lib/components/table/src/table/defaults';
@@ -12,8 +12,8 @@ type UserElTableColumnProps = {
   render?: (...arg: any[]) => any;
   children?: ElTableColumnProps[];
 };
-export type ElTableColumnProps = InstanceType<typeof ElTableColumn>['$props'] &
-  UserElTableColumnProps;
+export type ElTableColumnProps = (InstanceType<typeof ElTableColumn>['$props'] &
+  UserElTableColumnProps)[];
 
 export type ConditionalKeys<Base, Condition> = NonNullable<
   // Wrap in `NonNullable` to strip away the `undefined` type from the produced union.
@@ -60,7 +60,7 @@ export const tableProps = {
     default: 'center',
   },
   column: {
-    type: Array as PropType<ElTableColumnProps[]>,
+    type: Array as PropType<ElTableColumnProps> | ElTableColumnProps[number],
     default: () => [],
   },
 };
@@ -80,12 +80,15 @@ export type MergeTableProps = TableValidProps &
 
 const ElTableNext = defineComponent({
   name: 'ElTableNext',
+  // @ts-ignore
   props: {
     ...(tableProps as MergeTableProps),
   },
   setup(props, { attrs, slots }) {
     // const elTableRef = ref<ElTableType>();
     return () => {
+      // @ts-ignore
+
       const { data, column, align } = props;
 
       const renderColumn = (columnDict: Record<string, any>, index: number) => {
@@ -151,6 +154,7 @@ const ElTableNext = defineComponent({
     };
   },
   mounted() {
+    // @ts-ignore
     this.injectTablePrimaryMethods();
   },
   methods: {
