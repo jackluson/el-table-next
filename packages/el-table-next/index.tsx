@@ -1,7 +1,6 @@
-import { defineComponent, PropType, Ref } from 'vue';
+import { defineComponent, PropType } from 'vue';
 import type ElTable from 'element-plus/lib/components/table';
 import type { ElTableColumn } from 'element-plus/lib/components/table';
-import type { SummaryMethod } from 'element-plus/lib/components/table/src/table/defaults';
 
 type ElTableType = InstanceType<typeof ElTable>;
 type ElTableProps = ElTableType['$props'];
