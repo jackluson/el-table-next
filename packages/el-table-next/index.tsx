@@ -1,4 +1,4 @@
-import { defineComponent, PropType } from 'vue';
+import { defineComponent, PropType, createApp } from 'vue';
 import type ElTable from 'element-plus/lib/components/table';
 import type { ElTableColumn } from 'element-plus/lib/components/table';
 
@@ -11,8 +11,9 @@ type UserElTableColumnProps = {
   render?: (...arg: any[]) => any;
   children?: ElTableColumnProps[];
 };
-export type ElTableColumnProps = (InstanceType<typeof ElTableColumn>['$props'] &
-  UserElTableColumnProps)[];
+
+export type ElTableColumnProps = InstanceType<typeof ElTableColumn>['$props'] &
+  UserElTableColumnProps;
 
 export type ConditionalKeys<Base, Condition> = NonNullable<
   // Wrap in `NonNullable` to strip away the `undefined` type from the produced union.
@@ -59,7 +60,7 @@ export const tableProps = {
     default: 'center',
   },
   column: {
-    type: Array as PropType<ElTableColumnProps> | ElTableColumnProps[number],
+    type: Array as PropType<ElTableColumnProps[]>,
     default: () => [],
   },
 };
@@ -70,16 +71,14 @@ type KeyConstructor<Base extends object> = {
 };
 type TableValidProps = KeyConstructor<OmitTableProp>;
 
-export type MergeTableProps = TableValidProps &
-  typeof tableProps &
+export type MergeTableProps = typeof tableProps &
   eventMethodProps & {
     otherProps: PropType<Record<string, any>>;
     summaryMethod: PropType<(...param: any[]) => string[]>;
-  };
+  } & TableValidProps;
 
 const ElTableNext = defineComponent({
   name: 'ElTableNext',
-  // @ts-ignore
   props: {
     ...(tableProps as MergeTableProps),
   },
@@ -183,5 +182,20 @@ const ElTableNext = defineComponent({
     },
   },
 });
-export default ElTableNext;
+
+function install(app: ReturnType<typeof createApp>, options = {}) {
+  app.component('el-table-next', ElTableNext);
+}
+
+type ElTableNext = typeof ElTableNext & {
+  install: (
+    app: ReturnType<typeof createApp>,
+    options: Record<string, any>
+  ) => void;
+};
+
+ElTableNext.install = install;
+
+export default ElTableNext as ElTableNext;
+
 export { ElTableNext };

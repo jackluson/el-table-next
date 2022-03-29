@@ -1,5 +1,5 @@
-<!--
- * @Date: 2022-01-05 21:10:47
- * @LastEditTime: 2022-01-05 21:10:48
- * @Description:
--->
+# El-Table-Next
+
+> 基于 Element-plus Table 封装的易用，一致 Table 组件
+
+see: [https://github.com/jackluson/el-table-next](https://github.com/jackluson/el-table-next)
