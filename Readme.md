@@ -1,4 +1,4 @@
-# El-Table-Next
+# ElTableNext
 
 > 基于 Element-plus Table 封装的易用, 一致, 友好的 Table 组件
 
@@ -9,9 +9,7 @@
 <details>
 
 <summary>
-
-### Example
-
+**Example**
 </summary>
 
 ```vue
@@ -67,10 +65,17 @@ const tableData = [
 
 </details>
 
-### More Friendly Code IntelliSense
+<details>
+
+<summary>
+
+**More Friendly Code IntelliSense**
+
+</summary>
 
 1. ![](./packages/el-table-next-docs/docs/.vitepress/img/snippets.png)
 2. ![](./packages/el-table-next-docs/docs/.vitepress/img/snippets2.png)
+</details>
 
 ## Installation
 
