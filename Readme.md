@@ -4,7 +4,7 @@
 
 ## Why
 
-用过 [Element UI Table ](https://element-plus.org/en-US/component/table.html)的朋友都知道 用 Table 组件时需要用到`el-table-column`，它需要在 html 写, 而且很多列的话，需要一个个配置， 否则需要用循环, 这样对开发者极为不友好。 如果是动态的`el-table-column`的话体验就更差了, 因此封装了`El-Table-Next`基于 JSON 去配置列结构, 此外 ElTableNext 还有更加友好的代码提示特点。
+用过 [Element UI Table ](https://element-plus.org/en-US/component/table.html)的朋友都知道用 Table 组件时需要用到`el-table-column`，它是和 html 混写在一起的, 如果很多列的话，就需要一个个写配置, 否则需要用循环, 这样的体验对开发者极为不友好。 如果是动态的`el-table-column`的话体验就更差了, 因此封装了`El-Table-Next`基于 JSON 去配置列结构, 此外 ElTableNext 还有更加友好的代码提示特点。
 
 <details>
 
