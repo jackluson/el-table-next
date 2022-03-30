@@ -8,9 +8,7 @@
 
 <details>
 
-<summary>
-**Example**
-</summary>
+<summary><strong>Example</strong></summary>
 
 ```vue
 <template>
@@ -66,12 +64,7 @@ const tableData = [
 </details>
 
 <details>
-
-<summary>
-
-**More Friendly Code IntelliSense**
-
-</summary>
+<summary> <strong> More Friendly Code IntelliSense</strong> </summary>
 
 1. ![](./packages/el-table-next-docs/docs/.vitepress/img/snippets.png)
 2. ![](./packages/el-table-next-docs/docs/.vitepress/img/snippets2.png)
