@@ -4,11 +4,11 @@
 
 ## Why
 
-用过 [Element UI Table ](https://element-plus.org/en-US/component/table.html)的朋友都感受到 Table 组件配置列需要用到`el-table-column`写在 html 中, 如果是动态的`el-table-column`的话就更加不友好了, 因此封装了`El-Table-Next`基于 JSON 去配置列结构, 此外还有更加友好的代码提示。
+用过 [Element UI Table ](https://element-plus.org/en-US/component/table.html)的朋友都知道 用 Table 组件时需要用到`el-table-column`，它需要在 html 写, 而且很多列的话，需要一个个配置， 否则需要用循环, 这样对开发者极为不友好。 如果是动态的`el-table-column`的话体验就更差了, 因此封装了`El-Table-Next`基于 JSON 去配置列结构, 此外 ElTableNext 还有更加友好的代码提示特点。
 
 <details>
 
-<summary><strong>Example</strong></summary>
+<summary><strong>Basic Usage</strong></summary>
 
 ```vue
 <template>
