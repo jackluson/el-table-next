@@ -1,11 +1,14 @@
 <template>
   <header v-if="showHero" class="home-hero pt-15 pb-10 px-5">
-    <div
-      class="description mx-auto -mt-8 mb-2"
-    >A Simple and Friendly Table Component based on Element Plus Table</div>
+    <div class="description mx-auto -mt-8 mb-2">
+      A Simple and Friendly Table Component based on Element Plus Table
+    </div>
     <div class="mb-15 flex gap-1 place-content-center">
       <a href="https://www.npmjs.com/package/el-table-next" target="__blank">
-        <img src="https://img.shields.io/npm/v/el-table-next?color=a1b858&label=" alt="NPM version" />
+        <img
+          src="https://img.shields.io/npm/v/el-table-next?color=a1b858&label="
+          alt="NPM version"
+        />
       </a>
       <a href="https://www.npmjs.com/package/el-table-next" target="__blank">
         <img
@@ -16,7 +19,7 @@
     </div>
 
     <p class="actions flex gap-2 place-content-center">
-      <a class="get-started" href="/guide/">
+      <a class="get-started" href="/el-table-next/guide/">
         Get Started
         <icon-carbon:arrow-right class="icon" />
       </a>
