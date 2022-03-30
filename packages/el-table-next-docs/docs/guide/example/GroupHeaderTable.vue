@@ -3,7 +3,8 @@
 </template>
 
 <script lang="ts" setup>
-const column = [
+import type { ElTableColumnProps } from "el-table-next";
+const column: ElTableColumnProps[] = [
   {
     prop: "date",
     width: 120,

@@ -2,10 +2,19 @@
   "name": "el-table-next",
   "version": "1.0.0-beta3",
   "author": "jackluson <18219112108@163.com>",
-  "description": "a table component base on element-plus table",
+  "homepage": "https://github.com/jackluson/el-table-next",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackluson/el-table-next.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jackluson/el-table-next/issues"
+  },
+  "description": "A Simple and Friendly Table Component based on Element Plus Table",
   "keywords": [
-    "element-plus",
-    "vue-table",
+    "elementplus",
+    "table",
+    "el-table",
     "el-table-next"
   ],
   "license": "MIT",

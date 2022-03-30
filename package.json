@@ -3,12 +3,20 @@
   "version": "0.1.0",
   "main": "index.js",
   "author": "jackluson <18219112108@163.com>",
+  "homepage": "https://github.com/jackluson/el-table-next",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackluson/el-table-next.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jackluson/el-table-next/issues"
+  },
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build:pkg": "rollup -c",
-    "build:watch": "rollup -c -w",
-    "build:lib": "rollup -c -w --lib",
+    "dev": "cd packages/el-table-next-docs && npm run docs:dev",
+    "build:docs": "cd packages/el-table-next-docs && npm run docs:build",
+    "deploy:docs": "sh scripts/deploy.sh",
     "postversion": "git push --follow-tags"
   },
   "workspaces": [

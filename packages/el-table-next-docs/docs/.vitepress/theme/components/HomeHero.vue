@@ -1,40 +1,44 @@
 <template>
   <header v-if="showHero" class="home-hero pt-15 pb-10 px-5">
-    <div class="description mx-auto -mt-8 mb-2">
-      Collection of essential Vue Composition Utilities
-    </div>
+    <div
+      class="description mx-auto -mt-8 mb-2"
+    >A Simple and Friendly Table Component based on Element Plus Table</div>
     <div class="mb-15 flex gap-1 place-content-center">
-      <a href="https://www.npmjs.com/package/@vueuse/core" target="__blank"><img src="https://img.shields.io/npm/v/@vueuse/core?color=a1b858&label=" alt="NPM version"></a>
-      <a href="https://www.npmjs.com/package/@vueuse/core" target="__blank"><img alt="NPM Downloads" src="https://img.shields.io/npm/dm/@vueuse/core?color=50a36f&label="></a>
-      <img alt="Function Count" src="https://img.shields.io/badge/-142%20functions-1e8a7a">
+      <a href="https://www.npmjs.com/package/el-table-next" target="__blank">
+        <img src="https://img.shields.io/npm/v/el-table-next?color=a1b858&label=" alt="NPM version" />
+      </a>
+      <a href="https://www.npmjs.com/package/el-table-next" target="__blank">
+        <img
+          alt="NPM Downloads"
+          src="https://img.shields.io/npm/dm/el-table-next?color=50a36f&label="
+        />
+      </a>
     </div>
 
     <p class="actions flex gap-2 place-content-center">
-      <a class="get-started" href="/guide/">Get Started <icon-carbon:arrow-right class="icon" />
+      <a class="get-started" href="/guide/">
+        Get Started
+        <icon-carbon:arrow-right class="icon" />
       </a>
-      <a class="setup" href="https://github.com/jackluson/el-table-next" target="_blank"><icon-carbon:logo-github class="icon" />GitHub</a>
+      <a class="setup" href="https://github.com/jackluson/el-table-next" target="_blank">
+        <icon-carbon:logo-github class="icon" />GitHub
+      </a>
     </p>
   </header>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import { useData, withBase } from 'vitepress'
+import { computed } from "vue";
+import { useData, withBase } from "vitepress";
 
-const { site, frontmatter } = useData()
+const { site, frontmatter } = useData();
 
 const showHero = computed(() => {
-  const {
-    heroImage,
-    heroText,
-    tagline,
-    actionLink,
-    actionText,
-  } = frontmatter.value
-  return heroImage || heroText || tagline || (actionLink && actionText)
-})
+  const { heroImage, heroText, tagline, actionLink, actionText } = frontmatter.value;
+  return heroImage || heroText || tagline || (actionLink && actionText);
+});
 
-const heroText = computed(() => frontmatter.value.heroText || site.value.title)
+const heroText = computed(() => frontmatter.value.heroText || site.value.title);
 </script>
 
 <style scoped>

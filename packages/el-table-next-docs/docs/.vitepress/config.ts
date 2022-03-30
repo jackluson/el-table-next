@@ -9,7 +9,11 @@ const themeConfig = async () => {
 
 const config = {
   extends: themeConfig,
+  base: '/el-table-next/',
   title: 'el-table-next',
+  description:
+    'A Simple and Friendly Table Component based on Element Plus Table',
+
   head: [
     // ['script', { src: 'https://code.iconify.design/2/2.1.2/iconify.min.js' }],
   ],
@@ -31,21 +35,15 @@ const config = {
       { icon: 'github', link: 'https://github.com/jackluson/el-table-next' },
     ],
     nav: [
-      // {
-      //   text: 'Guide',
-      //   // items: [
-      //   //   { text: 'Guide', items: Guide },
-      //   //   { text: 'Links', items: Links },
-      //   // ],
-      // },
       {
         text: 'Home',
         link: '/',
+        // activeMatch: ,
       },
       {
         text: 'Guide',
         link: '/guide/',
-        activeMatch: /guide/,
+        activeMatch: /gide/,
       },
     ],
     sidebar: {

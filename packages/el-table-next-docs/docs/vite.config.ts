@@ -8,6 +8,7 @@ import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import WindiCSS from 'vite-plugin-windicss';
 import highlight from './.vitepress/plugins/highlight';
+import { NavbarFix } from './.vitepress/plugins/navbar';
 import MarkdownIt from 'markdown-it';
 
 const md = new MarkdownIt({
@@ -108,6 +109,7 @@ export default defineConfig({
     vueJsx({
       // options are passed on to @vue/babel-plugin-jsx
     }),
+    NavbarFix(),
     DemoBlockTransform(),
     Components({
       dirs: [
@@ -137,4 +139,9 @@ export default defineConfig({
       preflight: false,
     }),
   ],
+  server: {
+    fs: {
+      allow: ['../../../'],
+    },
+  },
 });

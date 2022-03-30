@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@iconify/json": "^2.0.29",
-    "@vue/theme": "^1.0.0",
+    "@vue/theme": "^1.0.1",
     "element-plus": "^2.0.3",
     "unplugin-icons": "^0.13.0",
     "unplugin-vue-components": "^0.17.15",
