@@ -27,8 +27,9 @@ const config = {
     lastUpdated: 'Last Updated',
 
     // algolia: {
-    //   apiKey: 'a99ef8de1b2b27949975ce96642149c6',
-    //   indexName: 'vueuse',
+    //   // appId: 'D43UNTHTRN',
+    //   // apiKey: 'a3fca7df39f58382c7aa3173f97b0002',
+    //   // indexName: 'ElTableNext',
     // },
 
     socialLinks: [

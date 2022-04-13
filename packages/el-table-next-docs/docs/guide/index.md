@@ -51,7 +51,7 @@ app.mount('#app');
 <script src="https://unpkg.com/el-table-next/dist/index.umd.js"></script>
 ```
 
-[这是一个使用 CDN 引入的 Anchor UI 在线 codesandbox 演示项目](https://codesandbox.io/embed/flamboyant-estrela-udtq3h?fontsize=14&hidenavigation=1&theme=dark)， 如下：
+[这是一个使用 CDN 引入的 ElTableNext 在线 codesandbox 演示项目](https://codesandbox.io/embed/flamboyant-estrela-udtq3h?fontsize=14&hidenavigation=1&theme=dark)， 如下：
 
 <iframe src="https://codesandbox.io/embed/flamboyant-estrela-udtq3h?fontsize=14&hidenavigation=1&theme=dark"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"

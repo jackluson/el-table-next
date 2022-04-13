@@ -1,6 +1,8 @@
 node_modules
+yarn-error.log
 .DS_Store
 dist
 dist-ssr
+!packages/el-table-next/dist
 *.local
 vite-project
