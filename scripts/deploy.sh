@@ -18,6 +18,5 @@ else
     # platform=$1
     # echo -e "platform: $platform"
 fi
-
 cd -
 
