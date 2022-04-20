@@ -19,7 +19,7 @@
     </div>
 
     <p class="actions flex gap-2 place-content-center">
-      <a class="get-started" href="/el-table-next/guide/">
+      <a class="get-started" :href="baseRoot + 'guide/'">
         Get Started
         <icon-carbon:arrow-right class="icon" />
       </a>
@@ -42,6 +42,8 @@ const showHero = computed(() => {
 });
 
 const heroText = computed(() => frontmatter.value.heroText || site.value.title);
+
+const baseRoot = computed(() => __BASE_ROOT__);
 </script>
 
 <style scoped>

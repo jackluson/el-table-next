@@ -1,7 +1,7 @@
 import type { Plugin } from 'vite';
 
 // Due to https://github.com/vuejs/theme/commit/842e4451fbf13925d1c67aa4274f86fc5a8510f7
-export function NavbarFix(): Plugin {
+export function NavbarFix(baseRoot: string): Plugin {
   return {
     name: 'navbar-fix',
     enforce: 'pre',
@@ -9,7 +9,7 @@ export function NavbarFix(): Plugin {
       if (id.includes('VPNavBarTitle.vue') && !id.endsWith('.css')) {
         return `
             <template>
-              <a class="VPNavBarTitle" href="/el-table-next/">
+              <a class="VPNavBarTitle" href="${baseRoot}">
                 <span class="text">ElTableNext</span>
               </a>
             </template>

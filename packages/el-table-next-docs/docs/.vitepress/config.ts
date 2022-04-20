@@ -7,11 +7,11 @@ const themeConfig = async () => {
   return config;
 };
 
-console.log('DEPLOY_PLATFORM', process.env.DEPLOY_PLATFORM);
 const isVercelDeployPlatform = process.env.DEPLOY_PLATFORM === 'vercel';
+const baseRoot = isVercelDeployPlatform ? '/' : '/el-table-next/';
 const config = {
   extends: themeConfig,
-  base: isVercelDeployPlatform ? '' : '/el-table-next/',
+  base: baseRoot,
   title: 'el-table-next',
   description:
     'A Simple and Friendly Table Component based on Element Plus Table',

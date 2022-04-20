@@ -102,14 +102,21 @@ function DemoBlockTransform(): Plugin {
     },
   };
 }
+const isVercelDeployPlatform = process.env.DEPLOY_PLATFORM === 'vercel';
+
+const baseRoot = isVercelDeployPlatform ? '/' : '/el-table-next/';
+
 // https://vitejs.dev/config/
 export default defineConfig({
+  define: {
+    __BASE_ROOT__: JSON.stringify(baseRoot),
+  },
   plugins: [
     // vue(),
     vueJsx({
       // options are passed on to @vue/babel-plugin-jsx
     }),
-    NavbarFix(),
+    NavbarFix(baseRoot),
     DemoBlockTransform(),
     Components({
       dirs: [
