@@ -2,10 +2,12 @@
 set -e
 
 cd packages/el-table-next-docs
+
 npm run docs:build
 
 cd docs/.vitepress/dist
 pwd
+
 
 if [ ! -n "$1" ] ;then
     echo "the deploy platform is github"
