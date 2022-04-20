@@ -13,9 +13,13 @@
       <a href="https://www.npmjs.com/package/el-table-next" target="__blank">
         <img
           alt="NPM Downloads"
-          src="https://img.shields.io/npm/dm/el-table-next?color=50a36f&label="
+          src="https://img.shields.io/npm/dt/el-table-next?color=50a36f&label=downloads"
         />
       </a>
+      <img
+        alt="visitor badge"
+        src="https://visitor-badge.glitch.me/badge?page_id=jackluson.el-table-next"
+      />
     </div>
 
     <p class="actions flex gap-2 place-content-center">

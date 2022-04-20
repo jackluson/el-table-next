@@ -1,5 +1,10 @@
 # ElTableNext
 
+[![MIT](https://img.shields.io/github/license/jackluson/el-table-next?style=plastic)](https://github.com/jackluson/el-table-next/blob/main/LICENSE)
+[![npm version](https://badge.fury.io/js/el-table-next.svg)](https://badge.fury.io/js/el-table-next)
+![NPM Downloads](https://badgen.net/npm/dt/el-table-next)
+![visitor badge](https://visitor-badge.glitch.me/badge?page_id=jackluson.el-table-next)
+
 > 基于 Element-plus Table 封装的易用, 一致, 友好的 Table 组件
 
 ## Why
@@ -82,4 +87,4 @@ $ yarn add el-table-next
 
 ## Documentation
 
-See: [https://jackluson.github.io/el-table-next/](https://jackluson.github.io/el-table-next/)
+See: [https://el-table-next.vercel.app/](https://el-table-next.vercel.app/)
