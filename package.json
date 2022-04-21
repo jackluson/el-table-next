@@ -1,6 +1,6 @@
 {
   "name": "el-table-next",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "index.js",
   "description": "A Simple and Friendly Vue Table Component based on el-table of Element Plus",
   "keywords": [
