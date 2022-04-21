@@ -1,9 +1,20 @@
 <template>
   <header v-if="showHero" class="home-hero pt-15 pb-10 px-5">
     <div class="description mx-auto -mt-8 mb-2">
-      A Simple and Friendly Table Component based on Element Plus Table
+      <img class="mx-auto" src="/.vitepress/img/logo.png" alt="el-table-next" />
+      <h1>ElTableNext</h1>
+      A Simple and Friendly Table Component based on el-table of Element Plus
     </div>
     <div class="mb-15 flex gap-1 place-content-center">
+      <a
+        href="https://github.com/jackluson/el-table-next/blob/main/LICENSE"
+        target="__blank"
+      >
+        <img
+          src="https://img.shields.io/github/license/jackluson/el-table-next?style=plastic"
+          alt="MIT"
+        />
+      </a>
       <a href="https://www.npmjs.com/package/el-table-next" target="__blank">
         <img
           src="https://img.shields.io/npm/v/el-table-next?color=a1b858&label="

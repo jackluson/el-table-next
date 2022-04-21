@@ -14,13 +14,39 @@ const config = {
   base: baseRoot,
   title: 'el-table-next',
   description:
-    'A Simple and Friendly Table Component based on Element Plus Table',
+    'A Simple and Friendly Vue Table Component based on el-table of Element Plus',
 
   head: [
-    // ['script', { src: 'https://code.iconify.design/2/2.1.2/iconify.min.js' }],
+    [
+      'link',
+      {
+        href: '/.vitepress/img/favicon-16x16.png',
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+      },
+    ],
+    [
+      'link',
+      {
+        href: '/.vitepress/img/favicon-32x32.png',
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32x32',
+      },
+    ],
+    [
+      'link',
+      {
+        href: '/.vitepress/img/apple-touch-icon.png',
+        rel: 'apple-touch-icon',
+        type: 'image/png',
+        sizes: '180x180',
+      },
+    ],
   ],
   themeConfig: {
-    logo: '/favicon.svg',
+    logo: '/.vitepress/img/favicon.ico',
     repo: 'jackluson/el-table-next',
     // docsDir: 'packages/el-table-next-docs/docs',
 

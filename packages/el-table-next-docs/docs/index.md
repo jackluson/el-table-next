@@ -1,8 +1,8 @@
 ---
 page: true
 heroText: ElTableNext
-tagline: A Simple and Friendly Table Component based on Element Plus Table
-description: A Simple and Friendly Table Component based on Element Plus Table
+tagline: A Simple and Friendly Vue Table Component based on el-table of Element Plus
+description: A Simple and Friendly Vue Table Component based on el-table of Element Plus
 
 features:
   - title: ✅一致性

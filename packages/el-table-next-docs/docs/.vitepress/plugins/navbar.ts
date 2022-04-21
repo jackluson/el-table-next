@@ -9,7 +9,8 @@ export function NavbarFix(baseRoot: string): Plugin {
       if (id.includes('VPNavBarTitle.vue') && !id.endsWith('.css')) {
         return `
             <template>
-              <a class="VPNavBarTitle" href="${baseRoot}">
+            <a class="VPNavBarTitle" href="${baseRoot}">
+                <img src="/.vitepress/img/favicon-32x32.png" alt="ElTableNext" class="logo" style="width:24px" >
                 <span class="text">ElTableNext</span>
               </a>
             </template>

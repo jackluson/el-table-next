@@ -10,7 +10,7 @@
   "bugs": {
     "url": "https://github.com/jackluson/el-table-next/issues"
   },
-  "description": "A Simple and Friendly Table Component based on Element Plus Table",
+  "description": "A Simple and Friendly Vue Table Component based on el-table of Element Plus",
   "keywords": [
     "elementplus",
     "table",

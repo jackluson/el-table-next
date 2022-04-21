@@ -1,5 +1,5 @@
 <template>
-  <footer v-if="frontmatter.footer" class="footer !mt-20">
+  <footer v-if="frontmatter.footer" class="footer !mt-15">
     <div class="container">
       <p class="text opacity-60">
         {{ frontmatter.footer }}
@@ -9,9 +9,9 @@
 </template>
 
 <script setup lang="ts">
-import { useData } from 'vitepress'
+import { useData } from "vitepress";
 
-const { frontmatter } = useData()
+const { frontmatter } = useData();
 </script>
 
 <style scoped>
@@ -22,7 +22,7 @@ const { frontmatter } = useData()
 
 @media (min-width: 720px) {
   .footer {
-    padding: 0 1.5rem;
+    padding: 0 1.2rem;
   }
 }
 
@@ -44,7 +44,7 @@ const { frontmatter } = useData()
   margin: 0;
   text-align: center;
   line-height: 1.4;
-  font-size: .9rem;
+  font-size: 0.9rem;
   color: var(--vt-c-text-light);
 }
 </style>
