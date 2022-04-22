@@ -29,6 +29,7 @@ declare module 'vue' {
     HomeFeatures: typeof import('./.vitepress/theme/components/HomeFeatures.vue')['default']
     HomeFooter: typeof import('./.vitepress/theme/components/HomeFooter.vue')['default']
     HomeHero: typeof import('./.vitepress/theme/components/HomeHero.vue')['default']
+    'IconCarbon:editFilter': typeof import('~icons/carbon/edit-filter')['default']
     LayoutTable: typeof import('./guide/example/LayoutTable.vue')['default']
     MultiSelectTable: typeof import('./guide/example/MultiSelectTable.vue')['default']
     RowColumnSpanTable: typeof import('./guide/example/RowColumnSpanTable.vue')['default']

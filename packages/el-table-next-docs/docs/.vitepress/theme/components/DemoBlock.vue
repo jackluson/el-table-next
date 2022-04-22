@@ -32,6 +32,16 @@
         <i :class="[iconClass, 'icon']"></i>
         <div class="text">{{ controlText }}</div>
       </div>
+      <el-tooltip
+        class="box-item"
+        effect="dark"
+        :content="
+          sourceCode ? '在 Playground 中编辑' : 'lang=\'tsx\' 暂不支持在Playground中编辑'
+        "
+        placement="top"
+      >
+        <icon-carbon:edit-filter class="edit-filter" @click="handleGo" />
+      </el-tooltip>
       <transition name="bounce">
         <span
           @click.stop="copyCode"
@@ -44,11 +54,22 @@
 </template>
 
 <script type="ts">
-import { ref } from 'vue'
-import { useRoute } from 'vitepress'
+import { ref, unref } from 'vue'
+import { ElMessage } from 'element-plus'
+import { useRoute, useData } from 'vitepress'
+
 export default {
+  props: {
+    sourceCode: {
+      type: String,
+      default: '',
+    },
+  },
   setup() {
     const route = useRoute()
+    const info = useData()
+    const navs = unref(info.theme).nav
+    const playGroundNav = navs.find(nav => nav.text === 'PlayGround')
     return {
       route,
       hovering: ref(false),
@@ -56,7 +77,8 @@ export default {
       isExpanded: ref(false),
       fixedControl: ref(false),
       codeContentWidth: ref(0),
-      scrollParent: ref(0)
+      scrollParent: ref(0),
+      playGroundLink: playGroundNav.link
     }
   },
   computed: {
@@ -113,6 +135,18 @@ export default {
     },
     removeScrollHandler() {
       this.scrollParent && this.scrollParent.removeEventListener("scroll", this.scrollHandler);
+    },
+    handleGo(e) {
+      e.stopPropagation()
+      if (this.sourceCode) {
+        const link = this.playGroundLink + "#" + this.sourceCode
+        window.open(link)
+      } else {
+        this.$message({
+          message: 'lang=\'tsx\' 暂不支持在Playground中编辑',
+          type: 'warning',
+        })
+      }
     }
   },
   watch: {
@@ -158,9 +192,11 @@ export default {
   margin-top: 15px;
   margin-bottom: 15px;
 }
+
 .demo-block.hover {
   box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6), 0 2px 4px 0 rgba(232, 237, 250, 0.5);
 }
+
 .demo-block code {
   font-family: Menlo, Monaco, Consolas, Courier, monospace;
 }
@@ -168,6 +204,7 @@ export default {
 .demo-block .demo-content {
   padding: 24px;
 }
+
 .demo-block .meta {
   border: solid 1px #ebebeb;
   background-color: #f9f9f9;
@@ -176,6 +213,7 @@ export default {
   height: 0;
   transition: height 0.2s;
 }
+
 .demo-block .description {
   padding: 20px;
   box-sizing: border-box;
@@ -188,6 +226,7 @@ export default {
   margin: 10px;
   background-color: var(--vt-c-bg);
 }
+
 .demo-block .demo-block-control {
   height: 44px;
   box-sizing: border-box;
@@ -197,12 +236,14 @@ export default {
   cursor: pointer;
   position: relative;
 }
+
 .demo-block .demo-block-control.is-fixed {
   position: fixed;
   bottom: 0;
   width: 660px;
   z-index: 999;
 }
+
 .demo-block .demo-block-control .icon {
   font-family: element-icons !important;
   font-style: normal;
@@ -213,6 +254,7 @@ export default {
   vertical-align: baseline;
   display: inline-block;
 }
+
 .demo-block .demo-block-control .caret-top::before {
   content: "";
   position: absolute;
@@ -222,6 +264,7 @@ export default {
   border-right: 6px solid transparent;
   border-left: 6px solid transparent;
 }
+
 .demo-block .demo-block-control .caret-bottom::before {
   content: "";
   position: absolute;
@@ -231,6 +274,13 @@ export default {
   border-right: 6px solid transparent;
   border-left: 6px solid transparent;
 }
+
+.demo-block .demo-block-control i {
+  font-size: 16px;
+  line-height: 44px;
+  transition: 0.3s;
+}
+
 .demo-block .demo-block-control i {
   font-size: 16px;
   line-height: 44px;
@@ -248,16 +298,31 @@ export default {
   top: 0;
 }
 
+.demo-block .edit-filter {
+  position: absolute;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  height: 100%;
+  min-width: 60px;
+  right: 58px;
+  top: 13px;
+  height: 24px;
+  outline: none;
+}
+
 .demo-block .fold-block {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .demo-block .fold-block {
   transition: transform 0.3s;
   transform: translateX(0px);
 }
+
 .demo-block .fold-block.hovering {
   transform: translateX(-30px);
 }
@@ -279,6 +344,7 @@ export default {
 .demo-block .demo-block-control .copy-action-success {
   color: #1bc1a1;
 }
+
 .demo-block .demo-block-control:hover {
   color: #409eff;
 }
@@ -287,13 +353,16 @@ export default {
   will-change: transform;
   animation: bounce-in 0.5s;
 }
+
 @keyframes bounce-in {
   0% {
     transform: scale(0);
   }
+
   50% {
     transform: scale(1.2);
   }
+
   100% {
     transform: scale(1);
   }

@@ -35,19 +35,25 @@ const createDemoBlockSfc = (descriptor: SFCParseResult['descriptor']) => {
     }
     let lang = 'vue';
     let sourceHtml = '';
+    let sourceCode = source;
     if (~sliceStartIndex) {
-      sourceHtml = highlightRender(
+      sourceCode =
         source.slice(0, sliceStartIndex) +
-          source.slice(sliceEndIndex + 7).trim(),
-        lang
-      );
-    } else {
-      sourceHtml = highlightRender(source, lang);
+        source.slice(sliceEndIndex + 7).trim();
     }
+    sourceHtml = highlightRender(sourceCode, lang);
+    const welcomeCode = sourceCode.includes('lang="tsx"')
+      ? ''
+      : {
+          'App.vue': sourceCode,
+        };
+    var serializeCode =
+      welcomeCode &&
+      Buffer.from(JSON.stringify(welcomeCode)).toString('base64');
     templateBlock = `
     <template>
       <div>
-          <demo-block>
+          <demo-block sourceCode="${serializeCode}">
             <template v-slot:demo>
               ${template.content}
             </template>

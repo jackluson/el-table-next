@@ -74,6 +74,10 @@ const config = {
         link: '/guide/',
         activeMatch: /gide/,
       },
+      {
+        text: 'PlayGround',
+        link: 'https://jackluson.github.io/el-table-next-playground/',
+      },
     ],
     sidebar: {
       '/guide/': [
