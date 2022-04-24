@@ -1,4 +1,4 @@
-import { defineComponent, PropType, createApp } from 'vue';
+import { defineComponent, App, PropType, createApp } from 'vue';
 import type ElTable from 'element-plus/lib/components/table';
 import type { ElTableColumn } from 'element-plus/lib/components/table';
 
@@ -184,14 +184,11 @@ const ElTableNext = defineComponent({
 });
 
 function install(app: ReturnType<typeof createApp>, options = {}) {
-  app.component('el-table-next', ElTableNext);
+  app.component(ElTableNext.name, ElTableNext);
 }
 
 type ElTableNext = typeof ElTableNext & {
-  install: (
-    app: ReturnType<typeof createApp>,
-    options: Record<string, any>
-  ) => void;
+  install: (app: App, options: Record<string, any>) => App;
 };
 
 ElTableNext.install = install;

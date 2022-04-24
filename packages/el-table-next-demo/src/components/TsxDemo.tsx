@@ -1,14 +1,10 @@
 import { defineComponent, ref } from 'vue';
-// import ElTableNext from '../../../el-table-next/index'
 import ElTableNext from 'el-table-next';
-// import ElTableNext from './ElTableNext';
 
 export default defineComponent({
-  name: 'ElTableProDemo',
-  components: {
-    ElTableNext,
-  },
+  name: 'TsxDemo',
   setup() {
+    const tableLayout = ref<'fixed' | 'auto'>('fixed');
     const tableData = [
       {
         date: '2016-05-09',
@@ -61,22 +57,29 @@ export default defineComponent({
     ];
     return () => {
       return (
-        <ElTableNext
-          data={tableData}
-          column={column}
-          stripe={true}
-          onSelect={() => {
-            console.log();
-          }}
-          onCellDblclick={() => {
-            console.log('jijij');
-          }}
-          className={'123123'}
-          cellClassName={'cellname'}
-          onCellContextmenu={() => {
-            console.log('右键');
-          }}
-        />
+        <div>
+          <h2>Tsx render Demo</h2>
+          <el-radio-group vModel={tableLayout.value}>
+            <el-radio-button label='fixed'></el-radio-button>
+            <el-radio-button label='auto'></el-radio-button>
+          </el-radio-group>
+          <ElTableNext
+            data={tableData}
+            column={column}
+            // stripe={true}
+            onSelect={() => {
+              console.log();
+            }}
+            onCellDblclick={() => {
+              console.log('jijij');
+            }}
+            cellClassName={'cellname'}
+            onCellContextmenu={() => {
+              console.log('右键df');
+            }}
+            tableLayout={tableLayout.value}
+          />
+        </div>
       );
     };
   },

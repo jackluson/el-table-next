@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import ElTableProDemo from './components/ElTableProDemo'
-import ElTableProDemoVue from './components/ELTableProDemo.vue'
+import TemplateDemo from "./components/TemplateDemo.vue";
+import TsxDemo from "./components/TsxDemo";
 defineExpose({
-  name: 'APP'
-})
+  name: "APP",
+});
 </script>
 <template>
-  <ElTableProDemo />
-  <ElTableProDemoVue />
+  <h1>ElTableNext Demo</h1>
+  <TemplateDemo />
+  <TsxDemo />
 </template>
 
 <style>

@@ -17,6 +17,7 @@
   "dependencies": {
     "@iconify/json": "^2.0.29",
     "@vue/theme": "^1.0.1",
+    "el-table-next": "^1.0.1",
     "unplugin-icons": "^0.13.0",
     "unplugin-vue-components": "^0.17.15",
     "vite-plugin-windicss": "^1.5.4",

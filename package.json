@@ -22,6 +22,7 @@
   "private": true,
   "scripts": {
     "dev": "cd packages/el-table-next-docs && npm run docs:dev",
+    "dev:demo": "cd packages/el-table-next-demo && npm run dev",
     "build:docs": "cd packages/el-table-next-docs && npm run docs:build",
     "deploy:docs": "sh scripts/deploy.sh",
     "postversion": "git push --follow-tags"
@@ -37,6 +38,6 @@
   },
   "dependencies": {
     "element-plus": "^2.1.9",
-    "vue": "^3.2.32"
+    "vue": "^3.2.33"
   }
 }
