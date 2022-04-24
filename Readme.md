@@ -1,1 +1,1 @@
-packages/el-table-next/README.md
+./packages/el-table-next
