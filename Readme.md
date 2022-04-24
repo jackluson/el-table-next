@@ -1,1 +1,1 @@
-./packages/el-table-next
+packages/el-table-next
