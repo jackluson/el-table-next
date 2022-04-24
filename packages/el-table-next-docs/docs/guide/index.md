@@ -35,6 +35,15 @@ app.use(ElementPlus).use(ElTableNext);
 app.mount('#app');
 ```
 
+[这是一个使用 Vite 脚手架引入的 ElTableNext 在线 stackblitz 演示项目](https://stackblitz.com/github/jackluson/el-table-next?file=packages%2Fel-table-next-demo%2Fsrc%2FApp.vue&terminal=dev:demo)， 如下：
+
+<iframe src="https://stackblitz.com/github/jackluson/el-table-next?file=packages%2Fel-table-next-demo%2Fsrc%2FApp.vue&terminal=dev:demo&embed=1"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="flamboyant-estrela-udtq3h"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
 ### 2. 使用 CDN 静态页面
 
 ```html
