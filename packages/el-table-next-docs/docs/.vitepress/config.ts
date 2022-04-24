@@ -20,7 +20,7 @@ const config = {
     [
       'link',
       {
-        href: '/.vitepress/img/favicon-16x16.png',
+        href: baseRoot + 'favicon-16x16.png',
         rel: 'icon',
         type: 'image/png',
         sizes: '16x16',
@@ -29,7 +29,7 @@ const config = {
     [
       'link',
       {
-        href: '/.vitepress/img/favicon-32x32.png',
+        href: baseRoot + 'favicon-32x32.png',
         rel: 'icon',
         type: 'image/png',
         sizes: '32x32',
@@ -38,7 +38,7 @@ const config = {
     [
       'link',
       {
-        href: '/.vitepress/img/apple-touch-icon.png',
+        href: baseRoot + 'apple-touch-icon.png',
         rel: 'apple-touch-icon',
         type: 'image/png',
         sizes: '180x180',
@@ -46,7 +46,7 @@ const config = {
     ],
   ],
   themeConfig: {
-    logo: '/.vitepress/img/favicon.ico',
+    logo: baseRoot + 'favicon.ico',
     repo: 'jackluson/el-table-next',
     // docsDir: 'packages/el-table-next-docs/docs',
 

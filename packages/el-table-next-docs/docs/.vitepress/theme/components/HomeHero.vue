@@ -6,31 +6,16 @@
       A Simple and Friendly Table Component based on el-table of Element Plus
     </div>
     <div class="mb-15 flex gap-1 place-content-center">
-      <a
-        href="https://github.com/jackluson/el-table-next/blob/main/LICENSE"
-        target="__blank"
-      >
-        <img
-          src="https://img.shields.io/github/license/jackluson/el-table-next?style=plastic"
-          alt="MIT"
-        />
+      <a href="https://github.com/jackluson/el-table-next/blob/main/LICENSE" target="__blank">
+        <img src="https://img.shields.io/github/license/jackluson/el-table-next?style=plastic" alt="MIT" />
       </a>
       <a href="https://www.npmjs.com/package/el-table-next" target="__blank">
-        <img
-          src="https://img.shields.io/npm/v/el-table-next?color=a1b858&label="
-          alt="NPM version"
-        />
+        <img src="https://img.shields.io/npm/v/el-table-next?color=a1b858&label=" alt="NPM version" />
       </a>
       <a href="https://www.npmjs.com/package/el-table-next" target="__blank">
-        <img
-          alt="NPM Downloads"
-          src="https://img.shields.io/npm/dt/el-table-next?color=50a36f&label=downloads"
-        />
+        <img alt="NPM Downloads" src="https://img.shields.io/npm/dt/el-table-next?color=50a36f&label=downloads" />
       </a>
-      <img
-        alt="visitor badge"
-        src="https://visitor-badge.glitch.me/badge?page_id=jackluson.el-table-next"
-      />
+      <img alt="visitor badge" src="https://visitor-badge.glitch.me/badge?page_id=jackluson.el-table-next" />
     </div>
 
     <p class="actions flex gap-2 place-content-center">
@@ -57,7 +42,6 @@ const showHero = computed(() => {
 });
 
 const heroText = computed(() => frontmatter.value.heroText || site.value.title);
-console.log("🚀 ~ file: HomeHero.vue ~ line 60 ~ heroText", heroText);
 
 const baseRoot = computed(() => __BASE_ROOT__);
 </script>
