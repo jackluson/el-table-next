@@ -2,7 +2,7 @@
   <header v-if="showHero" class="home-hero pt-15 pb-10 px-5">
     <div class="description mx-auto -mt-8 mb-2">
       <img class="mx-auto" src="/.vitepress/img/logo.png" alt="el-table-next" />
-      <h1>ElTableNext</h1>
+      <h1>{{ heroText }}</h1>
       A Simple and Friendly Table Component based on el-table of Element Plus
     </div>
     <div class="mb-15 flex gap-1 place-content-center">
@@ -57,6 +57,7 @@ const showHero = computed(() => {
 });
 
 const heroText = computed(() => frontmatter.value.heroText || site.value.title);
+console.log("🚀 ~ file: HomeHero.vue ~ line 60 ~ heroText", heroText);
 
 const baseRoot = computed(() => __BASE_ROOT__);
 </script>

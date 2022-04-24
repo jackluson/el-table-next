@@ -35,9 +35,7 @@
       <el-tooltip
         class="box-item"
         effect="dark"
-        :content="
-          sourceCode ? '在 Playground 中编辑' : 'lang=\'tsx\' 暂不支持在Playground中编辑'
-        "
+        :content="playGroundTooltip"
         placement="top"
       >
         <icon-carbon:edit-filter class="edit-filter" @click="handleGo" />
@@ -55,7 +53,6 @@
 
 <script type="ts">
 import { ref, unref } from 'vue'
-import { ElMessage } from 'element-plus'
 import { useRoute, useData } from 'vitepress'
 
 export default {
@@ -90,7 +87,11 @@ export default {
         "copy-success": "Copied！"
       }
     },
-
+    playGroundTooltip() {
+      return this.sourceCode
+        ? '在 Playground 中编辑'
+        : 'lang="tsx" 暂不支持在Playground中编辑'
+    },
     iconClass() {
       return this.isExpanded ? "caret-top" : "caret-bottom";
     },
