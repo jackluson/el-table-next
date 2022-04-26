@@ -72,11 +72,14 @@ const config = {
       {
         text: 'Guide',
         link: '/guide/',
-        activeMatch: /gide/,
       },
       {
         text: 'PlayGround',
         link: 'https://jackluson.github.io/el-table-next-playground/',
+      },
+      {
+        text: 'Blog',
+        link: '/blog',
       },
     ],
     sidebar: {

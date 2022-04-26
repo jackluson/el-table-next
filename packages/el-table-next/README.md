@@ -117,3 +117,7 @@ $ yarn add el-table-next
 ## Documentation
 
 See: [https://el-table-next.vercel.app/](https://el-table-next.vercel.app/)
+
+## Thanks
+
+Thanks you star
