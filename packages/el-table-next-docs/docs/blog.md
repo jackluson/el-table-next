@@ -174,8 +174,8 @@ const toggleColumnSort = () => {
 
 此外, 增加了一些额外的特性, 提供更好的 typescript 提示。因此封裝的時候，花了很多功夫去折腾 el-table typescript 类型。比如：
 
-1. ![代碼提示1](../.vitepress/img/snippets.png)
-2. ![代碼提示2](../.vitepress/img/snippets2.png)
+1. ![代碼提示1](./.vitepress/img/snippets.png)
+2. ![代碼提示2](./.vitepress/img/snippets2.png)
 
 渲染复杂列内容提供两种方式:
 
@@ -193,7 +193,7 @@ const toggleColumnSort = () => {
 
 ElTableNext 分别实现了官方`el-table` 所有 demo，应该还是比较稳的。
 
-![Demo](../.vitepress/img/blog4.png)
+![Demo](./.vitepress/img/blog4.png)
 
 可跳转查看如下 Demo: [https://el-table-next.vercel.app/guide/example.html](https://el-table-next.vercel.app/guide/example.html)
 
