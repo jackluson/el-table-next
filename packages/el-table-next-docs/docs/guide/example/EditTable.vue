@@ -71,7 +71,7 @@ const column = [
         <div>
           {scope.row._edit ? (
             <el-select
-              model-value={scope.row[scope.column.property]}
+              model-value={value}
               style="width: 120px"
               onUpdate:modelValue={(val) => {
                 scope.row[scope.column.property] = val;
@@ -83,7 +83,7 @@ const column = [
             </el-select>
           ) : (
             <el-tag type={scope.row.tag === "家" ? "info" : "success"}>
-              {scope.row[scope.column.property]}
+              {value}
             </el-tag>
           )}
         </div>
@@ -117,7 +117,6 @@ const column = [
             <el-button
               type="primary"
               onClick={function () {
-                console.log("this", this);
                 handleEdit(scope);
               }}
             >
