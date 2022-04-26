@@ -15,6 +15,7 @@ declare module 'vue' {
     CustomIndexTable: typeof import('./guide/example/CustomIndexTable.vue')['default']
     DemoBlock: typeof import('./.vitepress/theme/components/DemoBlock.vue')['default']
     DemoContainer: typeof import('./.vitepress/theme/components/DemoContainer.vue')['default']
+    EditTable: typeof import('./guide/example/EditTable.vue')['default']
     ElTableNext: typeof import('el-table-next')['ElTableNext']
     ELTableProDemo: typeof import('./guide/example/ELTableProDemo.vue')['default']
     ExpandableRowTable: typeof import('./guide/example/ExpandableRowTable.vue')['default']
@@ -40,6 +41,7 @@ declare module 'vue' {
     StatusTable: typeof import('./guide/example/StatusTable.vue')['default']
     StripeTable: typeof import('./guide/example/StripeTable.vue')['default']
     SummaryTable: typeof import('./guide/example/SummaryTable.vue')['default']
+    TestEle: typeof import('./guide/example/TestEle.vue')['default']
     TreeAndLazyTable: typeof import('./guide/example/TreeAndLazyTable.vue')['default']
   }
 }

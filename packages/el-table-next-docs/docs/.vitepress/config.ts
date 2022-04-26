@@ -96,6 +96,10 @@ const config = {
               text: 'Example',
               link: '/guide/example',
             },
+            {
+              text: 'Advanced Usage',
+              link: '/guide/advanced',
+            },
           ],
         },
       ],
