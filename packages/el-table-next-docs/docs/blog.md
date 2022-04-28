@@ -199,5 +199,4 @@ ElTableNext 分别实现了官方`el-table` 所有 demo，应该还是比较稳�
 
 ## Other
 
-此外还提供了 PlayGround 给小伙伴玩耍
-[PlayGround](https://jackluson.github.io/el-table-next-playground/)
+此外还提供了 [PlayGround](https://jackluson.github.io/el-table-next-playground/) 给小伙伴玩耍
