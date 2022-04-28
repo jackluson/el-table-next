@@ -54,11 +54,14 @@ const config = {
     editLinkText: 'Edit this page',
     lastUpdated: 'Last Updated',
 
-    algolia: {
-      appId: 'O30P7F613L',
-      apiKey: 'a9e5d247777f74b5446b7826a19c461d',
-      indexName: 'eltablenext',
-    },
+    algolia:
+      baseRoot === '/'
+        ? undefined
+        : {
+            appId: 'O30P7F613L',
+            apiKey: 'a9e5d247777f74b5446b7826a19c461d',
+            indexName: 'eltablenext',
+          },
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/jackluson/el-table-next' },

@@ -39,9 +39,13 @@ export function NavbarFix(baseRoot: string): Plugin {
             </style>
                   `;
       }
-      // if (id.includes('VPNavBarSearch.vue') && !id.endsWith('.css')) {
-      //   return `<div></div>`;
-      // }
+      if (
+        baseRoot === '/' &&
+        id.includes('VPNavBarSearch.vue') &&
+        !id.endsWith('.css')
+      ) {
+        return `<div></div>`;
+      }
     },
   };
 }
