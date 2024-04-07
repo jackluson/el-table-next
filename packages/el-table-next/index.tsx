@@ -171,6 +171,10 @@ const ElTableNext = defineComponent({
         'clearFilter',
         'doLayout',
         'sort',
+        'getSelectionRows',
+        'scrollTo',
+        'setScrollTop',
+        'setScrollLeft',
       ];
       for (const methodName of tableMethodNameList) {
         if (_self[methodName]) {
