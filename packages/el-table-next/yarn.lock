@@ -274,9 +274,7 @@
     picomatch "^2.2.2"
 
 "@vitejs/plugin-vue-jsx@^1.3.1":
-  version "1.3.1"
-  resolved "https://registry.npmmirror.com/@vitejs/plugin-vue-jsx/download/@vitejs/plugin-vue-jsx-1.3.1.tgz#d110a6f76e2ce9ff9f9e22db7795a14f43a37f2e"
-  integrity sha512-Ku0pnlG0CuFfkvwOe3TEHS7noqBIBR61JbdvH6F6i3IqJv8+0+tcyusR+EoFwi7YrA2vdP26oorWyGv3wDt5kg==
+  version "1.3.10"
   dependencies:
     "@babel/core" "^7.16.0"
     "@babel/plugin-syntax-import-meta" "^7.10.4"
