@@ -318,14 +318,7 @@
     hash-sum "^2.0.0"
 
 "@vitejs/plugin-vue@^1.9.3":
-  version "1.9.3"
-  resolved "https://registry.npmmirror.com/@vitejs/plugin-vue/download/@vitejs/plugin-vue-1.9.3.tgz#93d61893ce6c723d0209af0483ec8b91a2cd811f"
-  integrity sha1-k9YYk85scj0CCa8Eg+yLkaLNgR8=
-
-"@volar/code-gen@^0.27.24":
-  version "0.27.24"
-  resolved "https://registry.npmmirror.com/@volar/code-gen/download/@volar/code-gen-0.27.24.tgz#ccdbe858951c1ee4e0c3979232d52412dc46756a"
-  integrity sha1-zNvoWJUcHuTgw5eSMtUkEtxGdWo=
+  version "1.10.2"
   dependencies:
     "@volar/shared" "^0.27.24"
     "@volar/source-map" "^0.27.24"
