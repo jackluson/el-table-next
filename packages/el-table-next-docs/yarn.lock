@@ -463,9 +463,7 @@
   integrity sha1-HD32JL/Eti+ZLTASuExW1B6rN3Y=
 
 "@vitejs/plugin-vue-jsx@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.npmmirror.com/@vitejs/plugin-vue-jsx/download/@vitejs/plugin-vue-jsx-1.3.2.tgz#428792e1d9759bb59e648dd77bd5b415a6162fbf"
-  integrity sha512-PyYiMkd3xs5y1zpctjCOCz3coxTo8JqqCYNL3yoDN4kQkROKTnKpEDLPR0h0SnuhzMP/71yVg3g4DCI3FI9wWA==
+  version "1.3.10"
   dependencies:
     "@babel/core" "^7.16.0"
     "@babel/plugin-syntax-import-meta" "^7.10.4"
