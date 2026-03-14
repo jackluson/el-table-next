@@ -744,9 +744,7 @@ postcss@^8.1.10:
     source-map-js "^1.0.1"
 
 rollup-plugin-esbuild@^4.7.2:
-  version "4.7.2"
-  resolved "https://registry.npmmirror.com/rollup-plugin-esbuild/download/rollup-plugin-esbuild-4.7.2.tgz#1a496a9f96257cdf5ed800e818932859232471f8"
-  integrity sha512-rBS2hTedtG+wL/yyIWQ84zju5rtfF15gkaCLN0vsWGmBdRd0UPm52meAwkmrsPQf3mB/H2o+k9Q8Ce8A66SE5A==
+  version "4.10.3"
   dependencies:
     "@rollup/pluginutils" "^4.1.1"
     joycon "^3.0.1"
